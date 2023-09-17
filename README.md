@@ -1,5 +1,3 @@
-Természetesen, íme egy hosszabb követelményspecifikáció a zoknipárosító játékhoz, amely C# nyelven és .NET keretrendszerben valósul meg, és egy SQL adatbázist használ a játék adatainak tárolására.
-
 # Zoknipárosító Játék Követelményspecifikáció
 
 ## Bevezetés
