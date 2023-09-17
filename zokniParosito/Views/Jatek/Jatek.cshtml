@@ -1,6 +1,47 @@
 ﻿@{
     ViewData["Title"] = "Leaderboard";
 }
-<h1>@ViewData["Title"]</h1>
-@*TODO JATEKKINEZET ZOLI*@
-<p>Itt lesz a játék</p>
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/style.css")"
+    <title>Zoknipárosító Játék</title>
+</head>
+<body>
+    <div class="game-container">
+        <h1>Zoknipárosító Játék</h1>
+        <div class="socks-container">
+            <div class="socks-row">
+                <button class="pair-button" data-sock="a1">a1</button>
+                <button class="pair-button" data-sock="a2">a2</button>
+            </div>
+
+            <div class="socks-row">
+                <button class="pair-button" data-sock="b1">b1</button>
+                <button class="pair-button" data-sock="b2">b2</button>
+            </div>
+
+            <div class="socks-row">
+                <button class="pair-button" data-sock="c1">c1</button>
+                <button class="pair-button" data-sock="c2">c2</button>
+            </div>
+
+            <div class="socks-row">
+                <button class="pair-button" data-sock="d1">d1</button>
+                <button class="pair-button" data-sock="d2">d2</button>
+            </div>
+
+            <div class="socks-row">
+                <button class="pair-button" data-sock="e1">e1</button>
+                <button class="pair-button" data-sock="e2">e2</button>
+            </div>
+        </div>
+        <div id="message">
+            <p>Gratulálok</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

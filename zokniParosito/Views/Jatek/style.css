@@ -1,0 +1,134 @@
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-color: #f0e4d6;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.game-container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 50px;
+    color: #ff6f61;
+}
+
+h2 {
+    font-size: 20px;
+    margin-bottom: 25px;
+    color:#ff6f61;
+}
+
+.socks-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.socks-row {
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+    margin-bottom: 10px;
+}
+
+.pair-button {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    width: 100px;
+    height: 100px;
+    background-color: #ff6f61;
+    border: 2px solid #ff402c;
+    border-radius: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.pair-button:hover {
+    background-color: #ff402c;
+}
+
+#message {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #ff6f61;
+}
+
+.menu {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+.menu h1 {
+    font-size: 28px;
+    margin: 0;
+    color: #ff6f61;
+}
+
+.menu-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.difficulty {
+    margin-top: 10px;
+}
+
+.difficulty span {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.difficulty-button {
+    background-color: #ff6f61;
+    color: #ffffff;
+    border: none;
+    padding: 5px 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+}
+
+.difficulty-button:hover {
+    background-color: #ff402c;
+}
+
+.name-input {
+    margin-top: 20px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"] {
+    padding: 5px;
+    border: 2px solid #ff402c;
+    border-radius: 5px;
+    font-size: 16px;
+}
