@@ -13,4 +13,9 @@
     <Folder Include="wwwroot\js\Leaderboard\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="MySqlConnector" Version="2.2.7" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
 </Project>
