@@ -19,40 +19,6 @@ namespace zokniParosito.Controllers
             _configuration = configuration;
             _databaseService = databaseService;
         }
-         [HttpGet]
-    public async Task<IActionResult> GetLeaderBoard()
-    {
-        // Lekérdezés az összes adatból
-        var query = "SELECT * FROM Leaderboard;";
-        var leaderboardData = await _databaseService.QueryToJsonAsync<Leaderboard>(query);
-        return Ok(leaderboardData);
-    }
-
-    [HttpPost]
-    public async Task<IActionResult> InsertLeaderBoard([FromBody] Leaderboard leaderboard)
-    {
-        try
-        {
-            // Insert művelet
-            var insertQuery = $"INSERT INTO Leaderboard (ID, Datum, JatekosNev, RekordIdo) " +
-                              $"VALUES ({leaderboard.ID}, '{leaderboard.Datum}', '{leaderboard.JatekosNev}', {leaderboard.RekordIdo});";
-            
-            var success = await _databaseService.ExecuteNonQueryAsync(insertQuery);
-            
-            if (success)
-            {
-                return Ok("Sikeres beszúrás");
-            }
-            else
-            {
-                return BadRequest("Beszúrás sikertelen");
-            }
-        }
-        catch (Exception ex)
-        {
-            return StatusCode(500, $"Hiba történt: {ex.Message}");
-        }
-    }
         public IActionResult Index()
         {
             return View();
