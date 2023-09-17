@@ -55,7 +55,7 @@ Ez a részletes követelményspecifikáció definiálja az alkalmazás alapvető
 
 eknek, hogy sikeresen és kielégítően működjön a felhasználók számára. A további fejlesztés során fontos, hogy a részleteket kidolgozzák és a tesztelés során ellenőrizzék a megfelelőséget.
 
-#-------------------------------------------------------
+# -------------------------------------------------------
 
 # Zoknipárosító Webalkalmazás Funkcionális Specifikáció
 
