@@ -5,9 +5,18 @@ A zoknipárosító játék egy szórakoztató és kihívást jelentő alkalmazá
 
 ## Követelmények
 
+## Általános elvárások
+- Könnyen üzemeltethető
+- Gyerekek és fiatalkorúak számára könnyen kezelhető és átlátható weboldal
+- Intuitív menürendszer
+- Többnyelvűség
+- Reszponzív dizájn
+
 ### Felhasználói interfész
 1. Az alkalmazásnak modern és felhasználóbarát grafikus felhasználói interfésszel kell rendelkeznie, amely egyszerűen kezelhető és vonzó.
 2. A játékterületen jól láthatóan és egyértelműen jelenjenek meg a zoknik.
+
+   ![](https://github.com/albertbokor-unideb/zokniparosito-jatek/blob/main/ProjectStructure/img/Untitled.png)
 
 ### Nehézségi fokozatok
 3. A játék három nehézségi fokozattal rendelkezik: könnyű, közepes és nehéz.
@@ -34,23 +43,12 @@ A zoknipárosító játék egy szórakoztató és kihívást jelentő alkalmazá
 18. A leaderboardon megjelenő adatok között kell szerepelni a játékosok nevét, pontszámát és nehézségi fokozatát.
 19. A játékosok rangsorolása a pontszámok alapján történik, és a leaderboard folyamatosan frissüljön.
 
-## Technikai Követelmények
+### Fogalomtár
+- Reszponzív dizájn: A weboldalnak rendesen kell működnie minden felbontás között.
+- Leaderboard: Eredménytálba, ahol a játékos játékstatisztikáit és nevét tároljuk majd jelenítjük meg.
+- SQL adatbázis: Egy adatbázis fajta. Az adatok tárolására alkalmazott.
+- Grafikus felhasználói interfész: Amit a felhasználó lát, és navigál benne.
+- Intuitív menürendszer: Az alkalmazás gyerekek számára készül, szóval egyértelműnek kell lennie.
 
-### Platform
-20. Az alkalmazás .NET keretrendszeren kell futnia, és C# programozási nyelvet kell használnia.
 
-### Adatbázis
-21. Az SQL adatbázisnak kompatibilisnek kell lennie a .NET keretrendszerrel, és adatainak hatékonyan kell tárolódnia és lekérdezhetőnek kell lennie.
-
-### Felhasználói interfész
-22. A felhasználói interfésznek reszponzív dizájnnal kell rendelkeznie, hogy különböző képernyőméretekhez alkalmazkodjon.
-
-## Tesztelés
-23. Az alkalmazást alaposan kell tesztelni, beleértve a funkcionalitást, a teljesítményt és a biztonságot is, hogy biztosítsuk a hibamentes működést és a felhasználói élményt.
-
-## Dokumentáció
-24. A fejlesztőknek részletes dokumentációt kell készíteniük, amely tartalmazza az alkalmazás telepítési és használati útmutatóját, valamint a forráskód dokumentációját.
-
-Ez a részletes követelményspecifikáció definiálja az alkalmazás alapvető követelményeit a tervezés és fejlesztés során. Az alkalmazásnak meg kell felelnie ezeknek a követelmény
-
-eknek, hogy sikeresen és kielégítően működjön a felhasználók számára. A további fejlesztés során fontos, hogy a részleteket kidolgozzák és a tesztelés során ellenőrizzék a megfelelőséget.
+ 
