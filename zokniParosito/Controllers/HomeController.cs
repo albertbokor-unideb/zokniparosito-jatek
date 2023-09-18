@@ -19,6 +19,7 @@ namespace zokniParosito.Controllers
             _configuration = configuration;
             _databaseService = databaseService;
         }
+        
         public IActionResult Index()
         {
             return View();
