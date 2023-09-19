@@ -1,11 +1,21 @@
 using MySqlConnector;
+using zokniParosito.Database;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+var configuration = new ConfigurationBuilder()
+    .AddJsonFile("appsettings.json")
+    .Build();
+
+// Register services
 builder.Services.AddTransient<MySqlConnection>(_ =>
-    new MySqlConnection(builder.Configuration.GetConnectionString("Default")));
+    new MySqlConnection(configuration.GetConnectionString("Default")));
+builder.Services.AddTransient<DatabaseService>();
+
+// Other service registrations
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
