@@ -14,6 +14,14 @@ namespace zokniParosito.Controllers
             _configuration = configuration;
             _databaseService = databaseService;
         }
+        public IActionResult Game_Hu()
+        {
+            return View();
+        }
+        public IActionResult Game_En()
+        {
+            return View();
+        }
         [HttpGet]
         public async Task<IActionResult> GetZoknik()
         {

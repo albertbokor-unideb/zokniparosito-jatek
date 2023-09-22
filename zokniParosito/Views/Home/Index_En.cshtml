@@ -75,7 +75,7 @@
         <div class="row pt-3">
             <div class="col-3 ures"></div>
             <div class="col-6">
-                <a class="btn-lg btn-primary gomb" id="start-button" href="game_en.html">Start Game</a>
+                <a class="btn-lg btn-primary gomb" id="start-button" asp-area="" asp-controller="Jatek" asp-action="Game_En">Start Game</a>
             </div>
             <div class="col-3 ures"></div>
         </div>
@@ -101,7 +101,7 @@
         <div class="row pt-3">
             <div class="col-3 ures"></div>
             <div class="col-6">
-                <button class="btn-lg btn-primary gomb" id="leaderboard-button">Leaderboards</button>
+                <a class="btn-lg btn-primary gomb" id="leaderboard-button" asp-area="" asp-controller="Leaderboard" asp-action="Leaderboard">Leaderboard</a>
             </div>
             <div class="col-3 ures"></div>
         </div>
@@ -121,7 +121,7 @@
         <div class="row pt-3">
             <div class="col-5 ures"></div>
             <div class="col-2">
-                <a class="btn-lg btn-primary gomb" id="langbutton" href="menu_hu.html">Magyar</a>
+                <a class="btn-lg btn-primary gomb" id="langbutton" asp-area="" asp-controller="Home" asp-action="Index">English</a>
             </div>
             <div class="col-5 ures"></div>
         </div>

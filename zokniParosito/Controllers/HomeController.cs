@@ -24,5 +24,9 @@ namespace zokniParosito.Controllers
         {
             return View();
         }
+        public IActionResult Index_En()
+        {
+            return View();
+        }
     }
 }
