@@ -34,8 +34,8 @@ namespace zokniParosito.Controllers
         public async Task<IActionResult> GetPalyak()
         {
             var query = "SELECT * FROM Palyak;";
-            var zoknik = await _databaseService.QueryToJsonAsync<PalyaModel>(query);
-            return Ok();
+            var palyak = await _databaseService.QueryToJsonAsync<PalyaModel>(query);
+            return Ok(palyak);
         }
       
         public IActionResult Jatek()

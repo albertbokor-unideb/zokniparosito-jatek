@@ -1,4 +1,3 @@
-
 function GetZoknik() {
     $.ajax({
         url: '/Jatek/GetZoknik',
