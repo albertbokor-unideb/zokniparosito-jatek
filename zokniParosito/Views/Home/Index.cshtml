@@ -131,17 +131,17 @@ body {
 
         // Az "easy-button" kattintás eseménykezelője
         document.getElementById("easy-button").addEventListener("click", function () {
-            selectedDifficulty = "Könnyű";
+            selectedDifficulty = 1;
         });
 
         // A "medium-button" kattintás eseménykezelője
         document.getElementById("medium-button").addEventListener("click", function () {
-            selectedDifficulty = "Közepes";
+            selectedDifficulty = 2;
         });
 
         // A "hard-button" kattintás eseménykezelője
         document.getElementById("hard-button").addEventListener("click", function () {
-            selectedDifficulty = "Nehéz";
+            selectedDifficulty = 3;
         });
 
         // A "player-name" beviteli mező változás eseménykezelője
@@ -164,8 +164,11 @@ body {
                 return;
             }
 
-            // Ha mindkét adat rendben van, küldj AJAX kérést a szervernek
-            sendAjaxRequest(playerName, selectedDifficulty);
+            const newUrl = `/Jatek/Game_Hu?playerName=${encodeURIComponent(playerName)}&selectedDifficult=${selectedDifficulty}`;
+
+            // Átnavigálás az új URL-re
+            window.location.href = newUrl;
+
         });
     });
 </script>

@@ -14,8 +14,10 @@ namespace zokniParosito.Controllers
             _configuration = configuration;
             _databaseService = databaseService;
         }
-        public IActionResult Game_Hu()
+        public IActionResult Game_Hu(string playerName, int selectedDifficult)
         {
+            ViewData["Diff"] = selectedDifficult; // A szín értékét itt állítsd be
+            ViewData["Name"] = playerName;
             return View();
         }
         public IActionResult Game_En()
