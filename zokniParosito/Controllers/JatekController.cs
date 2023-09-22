@@ -16,10 +16,13 @@ namespace zokniParosito.Controllers
         }
         public IActionResult Game_Hu(string playerName, int selectedDifficult)
         {
-            ViewData["Diff"] = selectedDifficult; // A szín értékét itt állítsd be
+            playerName = Uri.UnescapeDataString(playerName);
+            ViewData["Diff"] = selectedDifficult;
             ViewData["Name"] = playerName;
+
             return View();
         }
+
         public IActionResult Game_En()
         {
             return View();

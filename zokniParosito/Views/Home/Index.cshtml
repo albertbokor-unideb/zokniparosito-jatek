@@ -69,7 +69,7 @@ body {
 <div class="row pt-3">
     <div class="col-3 ures"></div>
     <div class="col-6">
-        <a class="btn-lg btn-primary gomb" id="start-button" asp-area="" asp-controller="Jatek" asp-action="Game_Hu">Játék Indítása</a>
+        <a class="btn-lg btn-primary gomb" id="start-button">Játék Indítása</a>
     </div>
     <div class="col-3 ures"></div>
 </div>
@@ -127,7 +127,7 @@ body {
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         // Az aktuális nehézségi szint tárolásához használt változó
-        let selectedDifficulty = "";
+        let selectedDifficulty;
 
         // Az "easy-button" kattintás eseménykezelője
         document.getElementById("easy-button").addEventListener("click", function () {
@@ -154,7 +154,7 @@ body {
             const playerName = document.getElementById("player-name").value;
 
             // Ellenőrizd, hogy a felhasználó kiválasztotta-e a nehézségi szintet és megadta-e a nevét
-            if (selectedDifficulty === "") {
+            if (selectedDifficulty === null) {
                 alert("Kérlek válassz egy nehézségi szintet!");
                 return;
             }
@@ -163,10 +163,13 @@ body {
                 alert("Kérlek add meg a neved!");
                 return;
             }
+            console.log(selectedDifficulty);
+            console.log(playerName);
+            const encodedPlayerName = encodeURIComponent(playerName);
+            const newUrl = `/Jatek/Game_Hu?playerName=${encodedPlayerName}&selectedDifficult=${selectedDifficulty.value}`;
 
-            const newUrl = `/Jatek/Game_Hu?playerName=${encodeURIComponent(playerName)}&selectedDifficult=${selectedDifficulty}`;
 
-            // Átnavigálás az új URL-re
+            
             window.location.href = newUrl;
 
         });
