@@ -2,9 +2,9 @@ function GetZoknik() {
     $.ajax({
         url: '/Jatek/GetZoknik',
         type: "GET",
+        dataType: "json", 
         success: function (data) {
-            let x = JSON.stringify(data);
-            console.log(x);
+            console.log(data);
         },
         error: function (error) {
             console.log(`Error ${error}`);

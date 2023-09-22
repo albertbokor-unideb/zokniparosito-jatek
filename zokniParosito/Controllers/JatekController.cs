@@ -37,7 +37,23 @@ namespace zokniParosito.Controllers
             var palyak = await _databaseService.QueryToJsonAsync<PalyaModel>(query);
             return Ok(palyak);
         }
-      
+        [HttpGet]
+        public async Task<IActionResult> GetPalyakByFokozat(int fokozat)
+        {
+            var query = "SELECT * FROM Palyak WHERE PalyaID ='"+ fokozat +"';";
+            var palyak = await _databaseService.QueryToJsonAsync<PalyaModel>(query);
+
+            if (palyak == null)
+            {
+                // Hiba: Nem találhatók pályák a megadott fokozattal
+                return NotFound();
+            }
+
+            return Ok(palyak);
+        }
+
+
+
         public IActionResult Jatek()
         {
             return View();
