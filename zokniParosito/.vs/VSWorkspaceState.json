@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\bin",
+    "\\Views",
+    "\\Views\\Home",
+    "\\Views\\Jatek",
+    "\\Views\\Leaderboard",
+    "\\Views\\Shared",
+    "\\wwwroot",
+    "\\wwwroot\\css",
+    "\\wwwroot\\css\\Home"
+  ],
+  "SelectedNode": "\\Views\\Jatek\\Jatek.cshtml",
+  "PreviewInSolutionExplorer": false
+}
