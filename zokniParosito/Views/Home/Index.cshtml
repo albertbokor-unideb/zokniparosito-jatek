@@ -124,4 +124,49 @@ body {
 <script src="~/js/Jatek/JatekAdatok.js"></script>
 <script src="~/js/Home/PalyaAdatok.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Az aktuális nehézségi szint tárolásához használt változó
+        let selectedDifficulty = "";
+
+        // Az "easy-button" kattintás eseménykezelője
+        document.getElementById("easy-button").addEventListener("click", function () {
+            selectedDifficulty = "Könnyű";
+        });
+
+        // A "medium-button" kattintás eseménykezelője
+        document.getElementById("medium-button").addEventListener("click", function () {
+            selectedDifficulty = "Közepes";
+        });
+
+        // A "hard-button" kattintás eseménykezelője
+        document.getElementById("hard-button").addEventListener("click", function () {
+            selectedDifficulty = "Nehéz";
+        });
+
+        // A "player-name" beviteli mező változás eseménykezelője
+        document.getElementById("player-name").addEventListener("input", function () {
+            // Nevek megadását itt ellenőrizd és tárold el a playerName változóban.
+        });
+
+        // A "start-button" kattintás eseménykezelője
+        document.getElementById("start-button").addEventListener("click", function () {
+            const playerName = document.getElementById("player-name").value;
+
+            // Ellenőrizd, hogy a felhasználó kiválasztotta-e a nehézségi szintet és megadta-e a nevét
+            if (selectedDifficulty === "") {
+                alert("Kérlek válassz egy nehézségi szintet!");
+                return;
+            }
+
+            if (playerName === "") {
+                alert("Kérlek add meg a neved!");
+                return;
+            }
+
+            // Ha mindkét adat rendben van, küldj AJAX kérést a szervernek
+            sendAjaxRequest(playerName, selectedDifficulty);
+        });
+    });
+</script>
 
