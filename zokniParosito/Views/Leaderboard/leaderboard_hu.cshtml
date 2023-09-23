@@ -1,0 +1,241 @@
+﻿@{
+    ViewData["Title"] = "Leaderboard";
+}
+<h1>@ViewData["Title"]</h1>
+
+
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <style>
+        body {
+            font-family: 'Comic Sans MS';
+            background-color: #f0e4d6;
+            font-size: 1em;
+        }
+
+        .lb {
+            border-bottom: 1px solid black;
+        }
+
+        .row {
+            text-align: center;
+        }
+
+        .ures {
+            background-color: #f0e4d6;
+        }
+
+        .btn-lg {
+            width: 100%;
+            height: 100%;
+            font-size: 1em;
+            background-color: #ff6f61;
+            border: 2px solid #da3c2e;
+            color: wheat;
+            /*
+                    margin-bottom: 1rem;
+                    padding-bottom: 1rem;
+                    */
+        }
+
+            .btn-lg:hover {
+                background-color: #da3c2e;
+                color: #ff6f61;
+                border: 2px solid red;
+            }
+
+        .btn:active {
+            background-color: black;
+        }
+
+        .btn-outline-primary {
+            width: 100%;
+            height: 100%;
+            font-size: 1em;
+            background-color: #f0e4d6;
+            border: 2px solid #da3c2e;
+            color: black;
+            /*
+                    margin-bottom: 1rem;
+                    padding-bottom: 1rem;
+                    */
+        }
+    </style>
+    <title>Zoknipárosító Játék</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <h1>Zoknipárosító</h1>
+        </div>
+
+        <div class="row">
+            <h2>Ranglista</h2>
+        </div>
+
+        <div class="row pt-3">
+            <div class="col-3 ures"></div>
+            <div class="col-2">
+                <button class="btn-lg btn-outline-primary gomb" data-bs-toggle="button" id="easy-button">Könnyű</button>
+            </div>
+            <div class="col-2">
+                <button class="btn-lg btn-outline-primary gomb" data-bs-toggle="button" id="medium-button">Közepes</button>
+            </div>
+            <div class="col-2">
+                <button class="btn-lg btn-outline-primary gomb" data-bs-toggle="button" id="hard-button">Nehéz</button>
+            </div>
+            <div class="col-3 ures"></div>
+        </div>
+
+        <div class="row pt-3">
+            <div class="col-3 ures"></div>
+            <div class="col-2 lb">
+                #1
+            </div>
+            <div class="col-2 lb">
+                Név 1
+            </div>
+            <div class="col-2 lb">
+                Idő 1
+            </div>
+            <div class="col-3 ures"></div>
+        </div>
+
+        <div class="row pt-3">
+            <div class="col-3 ures"></div>
+            <div class="col-2 lb">
+                #2
+            </div>
+            <div class="col-2 lb">
+                Név 2
+            </div>
+            <div class="col-2 lb">
+                Idő 2
+            </div>
+            <div class="col-3 ures"></div>
+        </div>
+
+        <div class="row pt-3">
+            <div class="col-3 ures"></div>
+            <div class="col-2 lb">
+                #3
+            </div>
+            <div class="col-2 lb">
+                Név 3
+            </div>
+            <div class="col-2 lb">
+                Idő 3
+            </div>
+            <div class="col-3 ures"></div>
+        </div>
+
+        <div class="row pt-3">
+            <div class="col-3 ures"></div>
+            <div class="col-2 lb">
+                #4
+            </div>
+            <div class="col-2 lb">
+                Név 4
+            </div>
+            <div class="col-2 lb">
+                Idő 4
+            </div>
+            <div class="col-3 ures"></div>
+        </div>
+
+        <div class="row pt-3">
+            <div class="col-3 ures"></div>
+            <div class="col-2 lb">
+                #5
+            </div>
+            <div class="col-2 lb">
+                Név 5
+            </div>
+            <div class="col-2 lb">
+                Idő 5
+            </div>
+            <div class="col-3 ures"></div>
+        </div>
+
+        <div class="row pt-3">
+            <div class="col-3 ures"></div>
+            <div class="col-2 lb">
+                #6
+            </div>
+            <div class="col-2 lb">
+                Név 6
+            </div>
+            <div class="col-2 lb">
+                Idő 6
+            </div>
+            <div class="col-3 ures"></div>
+        </div>
+
+        <div class="row pt-3">
+            <div class="col-3 ures"></div>
+            <div class="col-2 lb">
+                #7
+            </div>
+            <div class="col-2 lb">
+                Név 7
+            </div>
+            <div class="col-2 lb">
+                Idő 7
+            </div>
+            <div class="col-3 ures"></div>
+        </div>
+
+        <div class="row pt-3">
+            <div class="col-3 ures"></div>
+            <div class="col-2 lb">
+                #8
+            </div>
+            <div class="col-2 lb">
+                Név 8
+            </div>
+            <div class="col-2 lb">
+                Idő 8
+            </div>
+            <div class="col-3 ures"></div>
+        </div>
+
+        <div class="row pt-3">
+            <div class="col-3 ures"></div>
+            <div class="col-2 lb">
+                #9
+            </div>
+            <div class="col-2 lb">
+                Név 9
+            </div>
+            <div class="col-2 lb">
+                Idő 9
+            </div>
+            <div class="col-3 ures"></div>
+        </div>
+
+        <div class="row pt-3">
+            <div class="col-3 ures"></div>
+            <div class="col-2 lb">
+                #10
+            </div>
+            <div class="col-2 lb">
+                Név 10
+            </div>
+            <div class="col-2 lb">
+                Idő 10
+            </div>
+            <div class="col-3 ures"></div>
+        </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</body>
+</html>
+
+
