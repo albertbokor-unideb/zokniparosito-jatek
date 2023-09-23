@@ -38,8 +38,9 @@ namespace zokniParosito.Controllers
         public async Task<IActionResult> GetZoknikByNehezseg(int nehezseg)
         {
             // Lekérdezés az összes adatból
-            var query = "SELECT * FROM Zokni WHERE PalyaID ='"+ nehezseg + "';";
+            var query = "SELECT * FROM Zokni WHERE PalyaID ='"+ nehezseg + "'ORDER BY RAND() LIMIT 5;";
             var zoknik = await _databaseService.QueryToJsonAsync<Zokni>(query);
+
             return Ok(zoknik);
         }
         [HttpGet]

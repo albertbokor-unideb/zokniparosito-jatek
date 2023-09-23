@@ -73,11 +73,11 @@ ViewData["Title"] = "Leaderboard";
     <div class="row pt-1">
         <div class="col-3 ures"></div>
         <div class="col-2">
-            <div class="btn-lg btn-primary gomb" id="3 "data-sock="bal">BAL 3</div>
+            <div class="btn-lg btn-primary gomb" id="3"data-sock="bal">BAL 3</div>
         </div>
         <div class="col-2 ures"></div>
         <div class="col-2">
-            <div class="btn-lg btn-primary gomb" id="3 "data-sock="jobb">JOBB 3</div>
+            <div class="btn-lg btn-primary gomb" id="3"data-sock="jobb">JOBB 3</div>
         </div>
         <div class="col-3 ures"></div>
     </div>
@@ -117,10 +117,26 @@ ViewData["Title"] = "Leaderboard";
     GetZoknikByNehezseg(selectedDifficult)
         .then(function (data) {
             console.log(data); // Az adatok elérhetők itt
+
+            for (let i = 1; i <= 5; i++) {
+                const gomb = document.getElementById(i.toString()); // Az i. gomb kiválasztása
+
+                if (gomb && data[i - 1]) { // Ellenőrizzük, hogy a gomb és az adat létezik
+                    const img = document.createElement('img'); // Kép elem létrehozása
+                    img.src = '/resource/' + data[i - 1].Kep; // Kép elérési útjának beállítása
+                    img.alt = data[i - 1].Nev; // Opcionális: képalternatíva beállítása
+
+                    // Kép hozzáadása a gomb tartalmához
+                    gomb.innerHTML = ''; // Töröld a gomb tartalmát
+                    gomb.appendChild(img); // Hozzáadja a képet a gombhoz
+                }
+            }
+
         })
         .catch(function (error) {
             console.log(error);
         });
+
     // Először szükséged van az összes gomb elemre.
     const buttons = document.querySelectorAll('.gomb');
     var balvalasztva = false;
