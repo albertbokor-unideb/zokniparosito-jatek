@@ -144,35 +144,28 @@ body {
             selectedDifficulty = 3;
         });
 
-        // A "player-name" beviteli mező változás eseménykezelője
-        document.getElementById("player-name").addEventListener("input", function () {
-            // Nevek megadását itt ellenőrizd és tárold el a playerName változóban.
-        });
-
         // A "start-button" kattintás eseménykezelője
         document.getElementById("start-button").addEventListener("click", function () {
             const playerName = document.getElementById("player-name").value;
 
-            // Ellenőrizd, hogy a felhasználó kiválasztotta-e a nehézségi szintet és megadta-e a nevét
-            if (selectedDifficulty === null) {
-                alert("Kérlek válassz egy nehézségi szintet!");
-                return;
-            }
-
+            // Ellenőrizd, hogy a felhasználó megadta-e a nevét
             if (playerName === "") {
                 alert("Kérlek add meg a neved!");
                 return;
             }
-            console.log(selectedDifficulty);
-            console.log(playerName);
+
+            // Ellenőrizd, hogy a felhasználó kiválasztotta-e a nehézségi szintet
+            if (!selectedDifficulty) {
+                alert("Kérlek válassz egy nehézségi szintet!");
+                return;
+            }
+
             const encodedPlayerName = encodeURIComponent(playerName);
-            const newUrl = `/Jatek/Game_Hu?playerName=${encodedPlayerName}&selectedDifficult=${selectedDifficulty.value}`;
+            const newUrl = `/Jatek/Game_Hu?playerName=${encodedPlayerName}&selectedDifficult=${selectedDifficulty}`;
 
-
-            
             window.location.href = newUrl;
-
         });
     });
+
 </script>
 
