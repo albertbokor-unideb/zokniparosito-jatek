@@ -108,11 +108,19 @@ ViewData["Title"] = "Leaderboard";
 </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="~/js/Jatek/JatekAdatok.js"></script>
+    <script src="~/js/Home/PalyaAdatok.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-    
-        
     var selectedDifficult = @ViewData["Diff"];
     var playerName = '@Html.Raw(ViewData["Name"])';
+    GetZoknikByNehezseg(selectedDifficult)
+        .then(function (data) {
+            console.log(data); // Az adatok elérhetők itt
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
     // Először szükséged van az összes gomb elemre.
     const buttons = document.querySelectorAll('.gomb');
     var balvalasztva = false;
@@ -132,12 +140,15 @@ ViewData["Title"] = "Leaderboard";
             if(id === balid && dataSock === "bal"){
                 balid = 0;
                 balvalasztva = false;
+                //ITT LEVESSZÜK A KÉK KERETET
+                this.style.border = "2px solid #da3c2e";
                 console.log("Bal oldali kiválasztás törölve")
             }
             else{
                 if(balvalasztva === false && dataSock === "bal"){
                     balvalasztva = true;
                     balid = id;
+                    this.style.border = "4px solid blue";
                     console.log("Bal oldalon kiválasztva")
                 }
                 if(dataSock === "bal"){
@@ -147,12 +158,17 @@ ViewData["Title"] = "Leaderboard";
             if (id === jobbid && dataSock === "jobb") {
                 jobbid = 0;
                 jobbvalasztva = false;
+
+                //ITT LEVESSZÜK A KÉK KERETET
+                this.style.border = "2px solid #da3c2e";
                 console.log("Jobb oldali kijelőlés törölve")
             }
             else{
                 if (jobbvalasztva === false && dataSock === "jobb") {
                     jobbvalasztva = true;
                     jobbid = id;
+                    //ITT RÁ RAKJUK
+                    this.style.border = "4px solid blue";
                     console.log("Jobb oldalon kiválasztva")
                 }
                 if(dataSock === "jobb") {
