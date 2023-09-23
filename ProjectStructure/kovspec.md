@@ -5,6 +5,7 @@ A zoknipárosító játék egy szórakoztató és kihívást jelentő alkalmazá
 
 ## Követelmények
 
+
 ## Általános elvárások
 - Könnyen üzemeltethető
 - Gyerekek és fiatalkorúak számára könnyen kezelhető és átlátható weboldal
@@ -34,14 +35,29 @@ A zoknipárosító játék egy szórakoztató és kihívást jelentő alkalmazá
 
 ### SQL Adatbázis
 13. Az alkalmazásnak egy SQL adatbázissal kell rendelkeznie a játékosok adatainak tárolására, beleértve a nevüket, pontszámukat és nehézségi fokozatukat.
-14. Az adatbázisnak biztonságosnak kell lennie, és jelszavak titkosítva tárolódjanak.
+14. Az adatbázisnak képesnek kell lennie új adatok fogadására. Például új játékelemekek (zokni [.svg]) tárolására. 
 15. Az adatbázisnak lehetőséget kell biztosítani a játékosok eredményeinek frissítésére és lekérdezésére.
+
+### Frissítések és Hibajavítások
+Az alkalmazásnak rendszeresen frissítéseket és hibajavításokat kell kapnia, hogy biztosítva legyen a zökkenőmentes működés és az esetleges hibák gyors javítása. Az új funkciók és fejlesztések is beépíthetők az alkalmazásba a felhasználói élmény további javítása érdekében.
 
 ### Leaderboard
 16. Az alkalmazásnak egy leaderboard funkcióval kell rendelkeznie, ahol a játékosok eredményei megjelennek.
 17. A leaderboardon a legjobb pontszámoknak és játékosoknak előnyt kell élvezniük.
 18. A leaderboardon megjelenő adatok között kell szerepelni a játékosok nevét, pontszámát és nehézségi fokozatát.
 19. A játékosok rangsorolása a pontszámok alapján történik, és a leaderboard folyamatosan frissüljön.
+
+### Mobilalkalmazás Támogatás
+Az alkalmazásnak lehetőséget kell biztosítania a mobilalkalmazásokhoz történő konverzióhoz, hogy a felhasználók különböző platformokon is élvezhessék a játékot. A mobilalkalmazásoknak is támogatniuk kell az előzően említett funkciókat és elvárásokat.
+
+### Felhasználói Visszajelzések
+Az alkalmazásnak lehetőséget kell biztosítania a felhasználóknak, hogy visszajelzéseket küldjenek a fejlesztőknek. Ez segíthet az alkalmazás továbbfejlesztésében és hibajavításában.
+
+### Többnyelvűség
+Az alkalmazásnak támogatnia kell többnyelvűséget, hogy a felhasználók különböző nyelveken használhassák. Az alapértelmezett nyelv mellett a felhasználóknak választhatóan lehetőségük kell kapniuk a nyelv megváltoztatására, ami a felhasználói élmény sokszínűsítését szolgálja.
+
+### Tesztelés
+Az alkalmazásnak alapos tesztelésen kell keresztülmennie, hogy biztosítsa a hibátlan működést. Ez magában foglalja a funkcionális, teljesítmény-, és biztonsági teszteket is. A tesztelés során az alkalmazásnak különböző platformokon és böngészőkben is megfelelően kell működnie. Tesztelés során különösen figyelni kell a nehézségi szintek és leaderboard megbízhatóságára.
 
 ### Fogalomtár
 - Reszponzív dizájn: A weboldalnak rendesen kell működnie minden felbontás között.
