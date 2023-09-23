@@ -24,7 +24,7 @@ namespace zokniParosito.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> InsertLeaderBoard([FromBody] Leaderboard leaderboard)
+        public async Task<IActionResult> InsertLeaderBoard(Leaderboard leaderboard)
         {
             try
             {

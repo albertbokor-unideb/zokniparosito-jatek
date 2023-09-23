@@ -53,7 +53,7 @@ ViewData["Title"] = "Leaderboard";
             <span id="ido">00:00</span>
         </div>
         <div class="col-2">
-            <div class="btn-lg btn-primary gomb" id="1" data-sock="jobb">JOBB 1</div>
+            <div class="btn-lg btn-primary gomb" id="6" data-sock="jobb">JOBB 1</div>
         </div>
         <div class="col-3 ures"></div>
     </div>
@@ -65,7 +65,7 @@ ViewData["Title"] = "Leaderboard";
         </div>
         <div class="col-2 ures"></div>
         <div class="col-2">
-            <div class="btn-lg btn-primary gomb" id="2" data-sock="jobb">JOBB 2</div>
+            <div class="btn-lg btn-primary gomb" id="7" data-sock="jobb">JOBB 2</div>
         </div>
         <div class="col-3 ures"></div>
     </div>
@@ -77,7 +77,7 @@ ViewData["Title"] = "Leaderboard";
         </div>
         <div class="col-2 ures"></div>
         <div class="col-2">
-            <div class="btn-lg btn-primary gomb" id="3"data-sock="jobb">JOBB 3</div>
+            <div class="btn-lg btn-primary gomb" id="8"data-sock="jobb">JOBB 3</div>
         </div>
         <div class="col-3 ures"></div>
     </div>
@@ -89,7 +89,7 @@ ViewData["Title"] = "Leaderboard";
         </div>
         <div class="col-2 ures"></div>
         <div class="col-2">
-            <div class="btn-lg btn-primary gomb" id="4" data-sock="jobb">JOBB 4</div>
+            <div class="btn-lg btn-primary gomb" id="9" data-sock="jobb">JOBB 4</div>
         </div>
         <div class="col-3 ures"></div>
     </div>
@@ -101,7 +101,7 @@ ViewData["Title"] = "Leaderboard";
         </div>
         <div class="col-2 ures"></div>
         <div class="col-2">
-            <div class="btn-lg btn-primary gomb" id="5" data-sock="jobb">JOBB 5</div>
+            <div class="btn-lg btn-primary gomb" id="10" data-sock="jobb">JOBB 5</div>
         </div>
         <div class="col-3 ures"></div>
     </div>
@@ -123,6 +123,7 @@ ViewData["Title"] = "Leaderboard";
 
                 if (gomb && data[i - 1]) { // Ellenőrizzük, hogy a gomb és az adat létezik
                     const img = document.createElement('img'); // Kép elem létrehozása
+                    img.id = data[i-1].ZokniID;
                     img.src = '/resource/' + data[i - 1].Kep; // Kép elérési útjának beállítása
                     img.alt = data[i - 1].Nev; // Opcionális: képalternatíva beállítása
 
@@ -131,11 +132,32 @@ ViewData["Title"] = "Leaderboard";
                     gomb.appendChild(img); // Hozzáadja a képet a gombhoz
                 }
             }
+            for (let i = 6; i <= 10; i++) {
+                const gomb = document.getElementById(i.toString()); // Az i. gomb kiválasztása
+
+                if (gomb && data.length > 0) { // Ellenőrizzük, hogy a gomb és az adat létezik
+                    const randomIndex = getRandomIndex(data); // Random index kiválasztása
+                    const randomData = data.splice(randomIndex, 1)[0]; // Elem eltávolítása a tömbből
+
+                    const img = document.createElement('img'); // Kép elem létrehozása
+                    img.id = randomData.ZokniID;
+                    img.src = '/resource/' + randomData.Kep; // Kép elérési útjának beállítása
+                    img.alt = randomData.Nev; // Opcionális: képalternatíva beállítása
+
+                    // Kép hozzáadása a gomb tartalmához
+                    gomb.innerHTML = ''; // Töröld a gomb tartalmát
+                    gomb.appendChild(img); // Hozzáadja a képet a gombhoz
+                }
+            }
+           
 
         })
         .catch(function (error) {
             console.log(error);
         });
+    function getRandomIndex(arr) {
+        return Math.floor(Math.random() * arr.length);
+    }
 
     // Először szükséged van az összes gomb elemre.
     const buttons = document.querySelectorAll('.gomb');
@@ -143,27 +165,43 @@ ViewData["Title"] = "Leaderboard";
     var jobbvalasztva = false;
     var balid = 0;
     var jobbid = 0;
+    var imagesToRemove = [];
     // A gombokhoz hozzárendeljük a kattintás eseménykezelőt.
     buttons.forEach(button => {
         button.addEventListener('click', function () {
             // Az id érték lekérése
             const id = this.id;
-
+            console.log("this.id: "+ this.id)
             // A data-sock érték lekérése
             const dataSock = this.getAttribute('data-sock');
-           
-           
-            if(id === balid && dataSock === "bal"){
+
+            // Keresd meg a div-et
+            const divElem = document.getElementById(id);
+
+            // Keresd meg a div-en belüli képet
+            const imgElem = divElem.querySelector('img');
+
+            // Kép id-jének lekérése
+            const imgId = imgElem ? imgElem.id : null;
+
+            if (imgId) {
+                // Itt már rendelkezésre áll az imgId, amit felhasználhatsz
+                console.log("A div-en belüli kép id-je: " + imgId);
+                // További műveletek az imgId-vel
+            }
+            if(imgId === balid && dataSock === "bal"){
                 balid = 0;
                 balvalasztva = false;
                 //ITT LEVESSZÜK A KÉK KERETET
                 this.style.border = "2px solid #da3c2e";
+                imagesToRemove.pop(id);
                 console.log("Bal oldali kiválasztás törölve")
             }
             else{
                 if(balvalasztva === false && dataSock === "bal"){
                     balvalasztva = true;
-                    balid = id;
+                    balid = imgId;
+                    imagesToRemove.push(id);
                     this.style.border = "4px solid blue";
                     console.log("Bal oldalon kiválasztva")
                 }
@@ -171,10 +209,10 @@ ViewData["Title"] = "Leaderboard";
                     console.log("Bal oldalon már volt választás")
                 }
             }
-            if (id === jobbid && dataSock === "jobb") {
+            if (imgId === jobbid && dataSock === "jobb") {
                 jobbid = 0;
                 jobbvalasztva = false;
-
+                imagesToRemove.pop(id);
                 //ITT LEVESSZÜK A KÉK KERETET
                 this.style.border = "2px solid #da3c2e";
                 console.log("Jobb oldali kijelőlés törölve")
@@ -182,8 +220,9 @@ ViewData["Title"] = "Leaderboard";
             else{
                 if (jobbvalasztva === false && dataSock === "jobb") {
                     jobbvalasztva = true;
-                    jobbid = id;
+                    jobbid = imgId;
                     //ITT RÁ RAKJUK
+                    imagesToRemove.push(id);
                     this.style.border = "4px solid blue";
                     console.log("Jobb oldalon kiválasztva")
                 }
@@ -193,8 +232,27 @@ ViewData["Title"] = "Leaderboard";
                 // Most már rendelkezésre állnak az id és dataSock értékek, amiket használhatsz.
               
             }
+            if(balid === jobbid && balid != 0 && jobbid != 0){
+                console.log("PÁR TALÁLTÁL")
+                
+                balid = 0;
+                jobbid =0
+                balvalasztva = false;
+                jobbvalasztva = false;
+                imagesToRemove.forEach(imgToRemove => {
+                    var divToDelete = document.getElementById(imgToRemove);
+
+                    // 2. Ellenőrizzük, hogy az elem létezik-e
+                    if (divToDelete) {
+                        // 3. Az elemet eltávolítjuk
+                        divToDelete.remove();
+                    }
+                    console.log("Pálya teljesitve")
+                });
+            }
         });
     });
+   
 
 
 
