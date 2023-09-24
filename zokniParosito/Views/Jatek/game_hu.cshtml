@@ -116,7 +116,8 @@ ViewData["Title"] = "Leaderboard";
     var playerName = '@Html.Raw(ViewData["Name"])';
     GetZoknikByNehezseg(selectedDifficult)
         .then(function (data) {
-            console.log(data); // Az adatok elérhetők itt
+            var adat = data;
+            console.log(adat.toString())// Az adatok elérhetők itt
 
             for (let i = 1; i <= 5; i++) {
                 const gomb = document.getElementById(i.toString()); // Az i. gomb kiválasztása
@@ -166,6 +167,7 @@ ViewData["Title"] = "Leaderboard";
     var balid = 0;
     var jobbid = 0;
     var imagesToRemove = [];
+    var parszamlalo = 0;
     // A gombokhoz hozzárendeljük a kattintás eseménykezelőt.
     buttons.forEach(button => {
         button.addEventListener('click', function () {
@@ -234,7 +236,7 @@ ViewData["Title"] = "Leaderboard";
             }
             if(balid === jobbid && balid != 0 && jobbid != 0){
                 console.log("PÁR TALÁLTÁL")
-                
+                parszamlalo = parszamlalo + 1;
                 balid = 0;
                 jobbid =0
                 balvalasztva = false;
@@ -247,12 +249,44 @@ ViewData["Title"] = "Leaderboard";
                         // 3. Az elemet eltávolítjuk
                         divToDelete.remove();
                     }
-                    console.log("Pálya teljesitve")
+                    
                 });
+            }
+            if(parszamlalo === 5)
+            {
+                alert("Sikeresen teljesítve!");
+                const currentDate = new Date();
+                const newUrl = `/Home/Index`;
+                const idoElem = document.getElementById("ido");
+
+                // Az "ido" elem tartalmának kiszedése egy változóba
+                const ido = idoElem.textContent;
+                console.log(ido)
+
+                // Ajax kérés beállítása
+                $.ajax({
+                    type: "POST",
+                    url: "/Leaderboard/InsertLeaderBoard", // Az InsertLeaderBoard metódus útvonala
+                    data: {
+                      JatekosNev: playerName,
+                        RekordIdo: ido,
+                        PalyaID : selectedDifficult
+                    },
+                    success: function (response) {
+                        // Sikeres válasz esetén
+                        console.log(response);
+                    },
+                    error: function (error) {
+                        // Hiba esetén
+                        console.error(error);
+                    }
+                });
+                window.location.href = '/Home/Index'
+                
             }
         });
     });
-   
+
 
 
 
@@ -264,11 +298,16 @@ ViewData["Title"] = "Leaderboard";
             const jelenlegiIdo = new Date().getTime();
             const kulonbsegMsec = jelenlegiIdo - idoKezdete;
             const kulonbsegSec = Math.floor(kulonbsegMsec / 1000);
+            const ora = Math.floor(kulonbsegSec / 3600); // Órák számítása
+            const perc = Math.floor((kulonbsegSec % 3600) / 60); // Perc számítása
             const masodperc = kulonbsegSec % 60;
-            const perc = Math.floor(kulonbsegSec / 60);
+            const tizedesmasodperc = Math.floor((kulonbsegMsec % 1000) / 10); // Tizedesmásodpercek számítása
+
+            // Formázás a TimeSpan formátumhoz: óra:perc:másodperc.tizedesmásodperc
+            const idoString = `${ora < 10 ? "0" : ""}${ora}:${perc < 10 ? "0" : ""}${perc}:${masodperc < 10 ? "0" : ""}${masodperc}.${tizedesmasodperc < 10 ? "0" : ""}${tizedesmasodperc}`;
 
             const idoElem = document.getElementById("ido");
-            idoElem.textContent = perc + ":" + (masodperc < 10 ? "0" : "") + masodperc;
+            idoElem.textContent = idoString;
 
             requestAnimationFrame(frissitIdo);
         }
@@ -282,9 +321,11 @@ ViewData["Title"] = "Leaderboard";
         }
     }
 
-    window.onload = function() {
+    window.onload = function () {
         inditIdomero();
     };
+
+
 //const buttons = document.querySelectorAll(".btn-lg.btn-primary.gomb");
 //let selectedButton = null;
 

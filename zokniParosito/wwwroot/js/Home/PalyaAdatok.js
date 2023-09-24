@@ -20,7 +20,6 @@ function GetPalyakByFokozat(fokozat) {
             url: '/Jatek/GetPalyakByFokozat',
             type: "GET",
             data: { fokozat: parseInt(fokozat, 10) }, // Ensure fokozat is an integer
-            dataType: "json",
             success: function (data) {
                 resolve(data);
             },

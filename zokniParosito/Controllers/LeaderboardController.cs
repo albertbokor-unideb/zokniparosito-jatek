@@ -24,30 +24,43 @@ namespace zokniParosito.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> InsertLeaderBoard(Leaderboard leaderboard)
+        public async Task<IActionResult> InsertLeaderBoard(string JatekosNev, string RekordIdo, string PalyaID)
         {
             try
             {
-                // Insert művelet
-                var insertQuery = $"INSERT INTO Leaderboard (ID, Datum, JatekosNev, RekordIdo) " +
-                                  $"VALUES ({leaderboard.ID}, '{leaderboard.Datum}', '{leaderboard.JatekosNev}', {leaderboard.RekordIdo});";
-
-                var success = await _databaseService.ExecuteNonQueryAsync(insertQuery);
-
-                if (success)
+                // Időintervallum parszolása TimeSpan-tá
+                TimeSpan rekordIdo;
+                if (TimeSpan.TryParse(RekordIdo, out rekordIdo))
                 {
-                    return Ok("Sikeres beszúrás");
+                    // Insert művelet
+                    var insertQuery = $"INSERT INTO Leaderboard (Datum, JatekosNev, RekordIdo, PalyaID) " +
+                                      $"VALUES ('{DateTime.Now.Date.ToString("yyyy-MM-dd")}', '{JatekosNev}', '{rekordIdo}','{PalyaID}');";
+
+                    var success = await _databaseService.ExecuteNonQueryAsync(insertQuery);
+
+                    if (success)
+                    {
+                        return Ok("Sikeres beszúrás");
+                    }
+                    else
+                    {
+                        return BadRequest("Beszúrás sikertelen");
+                    }
                 }
                 else
                 {
-                    return BadRequest("Beszúrás sikertelen");
+                    // Időintervallum parszolása sikertelen
+                    return BadRequest("Érvénytelen időformátum");
                 }
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex.ToString());
                 return StatusCode(500, $"Hiba történt: {ex.Message}");
             }
         }
+
+
         public IActionResult Leaderboard()
         {
             return View();
