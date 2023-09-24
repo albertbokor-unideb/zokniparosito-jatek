@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Numerics;
 using zokniParosito.Database;
 using zokniParosito.Models;
 
@@ -23,8 +24,11 @@ namespace zokniParosito.Controllers
             return View();
         }
 
-        public IActionResult Game_En()
+        public IActionResult Game_En(string playerName, int selectedDifficult)
         {
+            playerName = Uri.UnescapeDataString(playerName);
+            ViewData["Diff"] = selectedDifficult;
+            ViewData["Name"] = playerName;
             return View();
         }
         [HttpGet]
