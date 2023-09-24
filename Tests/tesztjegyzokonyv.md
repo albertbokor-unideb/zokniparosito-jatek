@@ -209,12 +209,38 @@ Játék futása közben ugyanrról az oldalról próbálunk több zoknit kijelö
 
 #### Teszt állapota: Sikeres
 
-#### Eredmények
-A játék csak abban az esetben indul el ha előtte megadtuk a nevet és a nehézségi fokozatot is
 
+### Teszt #5: Ranglista kiiratása adatbázisból
 
+#### Teszt Rövid Leírása
+Ranglista kiiratása előre feltöltött adatbázisból
 
-### Teszt #4: Játék inditása
+#### Tesztesetek
+
+#### 1. Könnyű fokozat, Firefox 117.0.1 desktop
+**Eredmény:** ranglista első 10 rekordja várt sorrendben megjelenik ✅
+#### 2. Könnyű fokozat, Chrome 116.0.5845.188 desktop
+**Eredmény:** ranglista első 10 rekordja várt sorrendben megjelenik ✅
+#### 3. Könnyű fokozat, Edge 117.0.2045.41 desktop
+**Eredmény:** ranglista első 10 rekordja várt sorrendben megjelenik ✅
+
+#### 4. Közepes fokozat, Firefox 117.0.1 desktop
+**Eredmény:** ranglista első 10 rekordja várt sorrendben megjelenik ✅
+#### 5. Közepes fokozat, Chrome 116.0.5845.188 desktop
+**Eredmény:** ranglista első 10 rekordja várt sorrendben megjelenik ✅
+#### 6. Közepes fokozat, Edge 117.0.2045.41 desktop
+**Eredmény:** ranglista első 10 rekordja várt sorrendben megjelenik ✅
+
+#### 7. Nehéz fokozat, Firefox 117.0.1 desktop
+**Eredmény:** ranglista első 10 rekordja várt sorrendben megjelenik ✅
+#### 8. Nehéz fokozat, Chrome 116.0.5845.188 desktop
+**Eredmény:** ranglista első 10 rekordja várt sorrendben megjelenik ✅
+#### 9. Nehéz fokozat, Edge 117.0.2045.41 desktop
+**Eredmény:** ranglista első 10 rekordja várt sorrendben megjelenik ✅
+
+![leaderboard](screenshot/leaderboard.png)
+
+#### Teszt állapota: Sikeres
 
 
 
