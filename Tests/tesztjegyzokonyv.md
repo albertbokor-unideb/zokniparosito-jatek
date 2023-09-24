@@ -23,26 +23,68 @@ Főmenü, Játék és Ranglista oldal megjelenése különböző ablakméreteken
 
 #### Tesztesetek
 
-1. Főmenü, Firefox desktpo
-2. Főmenü, Firefox mobile
-3. Főmenü, Chrome desktop
-4. Főmenü, Chrome mobile
-5. Főmenü, Edge desktop
-6. Játék, Firefox desktpo
-7. Játék, Firefox mobile
-8. Játék, Chrome desktop
-9. Játék, Chrome mobile
-10. Játék, Edge desktop
-11. Ranglista, Firefox desktpo
-12. Ranglista, Firefox mobile
-13. Ranglista, Chrome desktop
-14. Ranglista, Chrome mobile
-15. Ranglista, Edge desktop
+#### 1. Főmenü, Firefox 117.0.1 desktop, fullscreen 1920x1080px
+**Eredmény:** oldal kivánt módon jelenik meg ✅
 
+#### 2. Főmenü, Firefox 117.0.1 desktop, emulált iPad 810x1080px
+Eredmény: oldal kivánt módon jelenik meg ✅
 
-#### Eredmények
-- desktop nézeteken 440px minimális szélesség, mobil nézetben kisebb is elérhető, de ezen a méreten már kezdenek egymásba lógni a feliratok
-- a böngészők kőzül egyikben sem tért el látványosan az oldalak megjelenése
+#### 3. Főmenü, Firefox 117.0.1 desktop, emulált Galaxy Note 412x915px
+Eredmény: a cimkék kicsit kezdenenk lecsúszni a gombokról be még minden olvasható és klikkelhető✅
+
+#### 4. Főmenü, Google Chrome 116.0.5845.188 desktop, fullscreen 1920x1080px
+**Eredmény:** oldal kivánt módon jelenik meg ✅
+
+#### 5. Főmenü, Google Chrome 116.0.5845.188 desktop, emulált iPad 820x1180px
+**Eredmény:** oldal kivánt módon jelenik meg ✅
+
+#### 6. Főmenü, Google Chrome 116.0.5845.188 desktop, emulált Galaxy Note 393x851px
+**Eredmény:** a cimkék kicsit kezdenenk lecsúszni a gombokról be még minden olvasható és klikkelhető✅
+
+#### 7. Főmenü, Edge 117.0.2045.41 desktop, fullscreen 1920x1080px
+**Eredmény:** oldal kivánt módon jelenik meg ✅
+
+#### 8. Játék, Firefox 117.0.1 desktop, fullscreen 1920x1080px
+**Eredmény:** oldal kivánt módon jelenik meg ✅
+
+#### 9. Játék, Firefox 117.0.1 desktop, emulált iPad 810x1080px
+**Eredmény:** oldal kivánt módon jelenik meg ✅
+
+#### 10. Játék, Firefox 117.0.1 desktop, emulált Galaxy Note 412x915px
+**Eredmény**: a zokni ikonok kicsit le vannak vágva de teljesen felismerhetőek és klikkelhetőek ✅
+
+#### 11. Játék, Google Chrome 116.0.5845.188 desktop, fullscreen 1920x1080px
+**Eredmény:** oldal kivánt módon jelenik meg ✅
+
+#### 12. Játék, Google Chrome 116.0.5845.188 desktop, emulált iPad 820x1180px
+**Eredmény:** oldal kivánt módon jelenik meg ✅
+
+#### 13. Játék, Google Chrome 116.0.5845.188 desktop, emulált Galaxy Note 393x851px
+**Eredmény:** a zokni ikonok kicsit le vannak vágva de teljesen felismerhetőek és klikkelhetőek ✅
+
+#### 14. Játék, Edge 117.0.2045.41 desktop, fullscreen 1920x1080px
+**Eredmény:** oldal kivánt módon jelenik meg ✅
+
+#### 15. Ranglista, Firefox 117.0.1 desktop, fullscreen 1920x1080px
+**Eredmény:** oldal kivánt módon jelenik meg ✅
+
+#### 16. Ranglista, Firefox 117.0.1 desktop, emulált iPad 810x1080px
+**Eredmény:** oldal kivánt módon jelenik meg ✅
+
+#### 17. Ranglista, Firefox 117.0.1 desktop, emulált Galaxy Note 412x915px
+**Eredmény:** oldal kivánt módon jelenik meg ✅
+
+#### 18. Ranglista, Google Chrome 116.0.5845.188 desktop, fullscreen 1920x1080px
+**Eredmény:** oldal kivánt módon jelenik meg ✅
+
+#### 19. Ranglista, Google Chrome 116.0.5845.188 desktop, emulált iPad 820x1180px
+**Eredmény:** oldal kivánt módon jelenik meg ✅
+
+#### 20. Ranglista, Google Chrome 116.0.5845.188 desktop, emulált Galaxy Note 393x851px
+**Eredmény:** oldal kivánt módon jelenik meg ✅
+
+#### 21. Ranglista, Edge 117.0.2045.41 desktop, fullscreen 1920x1080px
+**Eredmény:** oldal kivánt módon jelenik meg ✅
 
 ![index](screenshot/windowsize_index.png)
 ![jatek](screenshot/windowsize_jatek.png)
@@ -60,22 +102,53 @@ Főmenü, Játék és Ranglista oldal nyelvének megjelenése angol és magyar n
 
 #### Tesztesetek
 
-1. Főmenü, magyar
-2. Főmenü, angol
-3. Játék, magyar
-4. Játék, angol
-5. Ranglista, magyar
-6. Ranglista, angol
+#### 1. Főmenü, magyar, Firefox 117.0.1 desktop
+**Eredmény:** feliratok mefelelően kiiródnak, nyelv váltó gomb működik ✅
+#### 2. Főmenü, magyar, Chrome 116.0.5845.188 desktop
+**Eredmény:** feliratok mefelelően kiiródnak, nyelv váltó gomb működik ✅
+#### 3. Főmenü, magyar, Edge 117.0.2045.41 desktop
+**Eredmény:** feliratok mefelelően kiiródnak, nyelv váltó gomb működik ✅
 
+#### 4. Főmenü, angol, Firefox 117.0.1 desktop
+**Eredmény:** feliratok mefelelően kiiródnak, nyelv váltó gomb működik ✅
+#### 5. Főmenü, angol, Chrome 116.0.5845.188 desktop
+**Eredmény:** feliratok mefelelően kiiródnak, nyelv váltó gomb működik ✅
+#### 6. Főmenü, angol, Edge 117.0.2045.41 desktop
+**Eredmény:** feliratok mefelelően kiiródnak, nyelv váltó gomb működik ✅
 
-#### Eredmények
-főmenü oldalon nyelv váltó gomb megfelelően működik, a többi oldal is szépen megjelenik a beállitott nyelven
+#### 7. Játék, magyar, Firefox 117.0.1 desktop
+**Eredmény:** feliratok mefelelően kiiródnak ✅
+#### 8. Játék, magyar, Chrome 116.0.5845.188 desktop
+**Eredmény:** feliratok mefelelően kiiródnak ✅
+#### 9. Játék, magyar, Edge 117.0.2045.41 desktop
+**Eredmény:** feliratok mefelelően kiiródnak ✅
+
+#### 10. Játék, angol, Firefox 117.0.1 desktop
+**Eredmény:** feliratok mefelelően kiiródnak ✅
+#### 11. Játék, angol, Chrome 116.0.5845.188 desktop
+**Eredmény:** feliratok mefelelően kiiródnak ✅
+#### 12. Játék, angol, Edge 117.0.2045.41 desktop
+**Eredmény:** feliratok mefelelően kiiródnak ✅
+
+#### 13. Ranglista, magyar, Firefox 117.0.1 desktop
+**Eredmény:** feliratok mefelelően kiiródnak ✅
+#### 14. Ranglista, magyar, Chrome 116.0.5845.188 desktop
+**Eredmény:** feliratok mefelelően kiiródnak ✅
+#### 15. Ranglista, magyar, Edge 117.0.2045.41 desktop
+**Eredmény:** feliratok mefelelően kiiródnak ✅
+
+#### 16. Ranglista, angol, Firefox 117.0.1 desktop
+**Eredmény:** feliratok mefelelően kiiródnak ✅
+#### 17. Ranglista, angol, Chrome 116.0.5845.188 desktop
+**Eredmény:** feliratok mefelelően kiiródnak ✅
+#### 18. Ranglista, angol, Edge 117.0.2045.41 desktop
+**Eredmény:** feliratok mefelelően kiiródnak ✅
 
 ![index](screenshot/english_index.png)
 ![jatek](screenshot/english_jatek.png)
 
-
 #### Teszt állapota: Sikeres
+
 
 
 ### Teszt #3: Játék inditása
@@ -84,6 +157,16 @@ főmenü oldalon nyelv váltó gomb megfelelően működik, a többi oldal is sz
 Főmenüből megpróbáljuk elinditani a játékot 
 
 #### Tesztesetek
+
+#### 1. üres mezőkkel, Firefox 117.0.1 desktop
+**Eredmény:** popup-ot dob `Kérlek add meg a neved!` felirattal ✅
+#### 2. üres mezőkkel, Chrome 116.0.5845.188 desktop
+**Eredmény:** popup-ot dob `Kérlek add meg a neved!` felirattal ✅
+#### 3. üres mezőkkel, Edge 117.0.2045.41 desktop
+**Eredmény:** popup-ot dob `Kérlek add meg a neved!` felirattal ✅
+
+
+
 
 1. üres mezőkkel
 2. név megadva
@@ -98,6 +181,9 @@ A játék csak abban az esetben indul el ha előtte megadtuk a nevet és a nehé
 
 
 #### Teszt állapota: Sikeres
+
+
+### Teszt #4: Játék inditása
 
 
 
