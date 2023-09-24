@@ -185,23 +185,33 @@ Főmenüből megpróbáljuk elinditani a játékot
 #### 12. név és nehézségi fokozat megadva, Edge 117.0.2045.41 desktop
 **Eredmény:** játék elindul ✅
 
+![name](screenshot/start_empty.png)
+![dificulty](screenshot/start_nodif.png)
+
+#### Teszt állapota: Sikeres
+
 
 ### Teszt #4: Többszörös kijelölés
 
 #### Teszt Rövid Leírása
-Főmenüből megpróbáljuk elinditani a játékot 
+Játék futása közben ugyanrról az oldalról próbálunk több zoknit kijelölni
 
 #### Tesztesetek
 
+#### 1. Firefox 117.0.1 desktop
+**Eredmény:** első után már nem jelölhető ki egyszerre másik elem ugyanarról az oldalról ✅
+#### 2. Chrome 116.0.5845.188 desktop
+**Eredmény:** első után már nem jelölhető ki egyszerre másik elem ugyanarról az oldalról ✅
+#### 3. Edge 117.0.2045.41 desktop
+**Eredmény:** első után már nem jelölhető ki egyszerre másik elem ugyanarról az oldalról ✅
+
+![jatek](screenshot/select.png)
+
+#### Teszt állapota: Sikeres
 
 #### Eredmények
 A játék csak abban az esetben indul el ha előtte megadtuk a nevet és a nehézségi fokozatot is
 
-![index](screenshot/start_empty.png)
-![jatek](screenshot/start_nodif.png)
-
-
-#### Teszt állapota: Sikeres
 
 
 ### Teszt #4: Játék inditása
