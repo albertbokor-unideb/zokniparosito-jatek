@@ -275,20 +275,15 @@ játszma lejátszás után megnézzük hogy elmentette-e a játékosnév+játék
 
 
 
-
-
 ## Tesztek Összegzése
+A webalkalmazás az előzetes fejlesztői elvárásoknak megfelelően működik, oldalarányos betüméret beállitással még mobilon is szépen nézne ki.
 
 
-
-## Képek és Hibajelentések
-
-(A képernyőképek vagy hibajelentések itt helyezhetők el szükség esetén.)
 
 ## Aláírás
 
-Tesztelő neve: [Tesztelő neve]
+Tesztelő neve: Bokor Alber
 
-Dátum: [Dátum]
+Dátum: 2023.09.25
 
 ---
