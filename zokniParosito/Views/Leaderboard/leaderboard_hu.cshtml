@@ -28,147 +28,68 @@ ViewData["Title"] = "Leaderboard";
         </div>
         <div class="col-3 ures"></div>
     </div>
-
-    <div class="row pt-3">
-        <div class="col-3 ures"></div>
-        <div class="col-2 lb">
-            #1
+    <div id="leaderboard-container" class="row pt-3">
+        <div class="col-12">
+            <table id="leaderboard-table" class="table">
+                <!-- Táblázat fejléc -->
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Név</th>
+                        <th>Idő</th>
+                    </tr>
+                </thead>
+                <!-- Táblázat tartalom (ezt fogjuk dinamikusan frissíteni) -->
+                <tbody>
+                </tbody>
+            </table>
         </div>
-        <div class="col-2 lb">
-            Név 1
-        </div>
-        <div class="col-2 lb">
-            Idő 1
-        </div>
-        <div class="col-3 ures"></div>
-    </div>
-
-    <div class="row pt-3">
-        <div class="col-3 ures"></div>
-        <div class="col-2 lb">
-            #2
-        </div>
-        <div class="col-2 lb">
-            Név 2
-        </div>
-        <div class="col-2 lb">
-            Idő 2
-        </div>
-        <div class="col-3 ures"></div>
-    </div>
-
-    <div class="row pt-3">
-        <div class="col-3 ures"></div>
-        <div class="col-2 lb">
-            #3
-        </div>
-        <div class="col-2 lb">
-            Név 3
-        </div>
-        <div class="col-2 lb">
-            Idő 3
-        </div>
-        <div class="col-3 ures"></div>
-    </div>
-
-    <div class="row pt-3">
-        <div class="col-3 ures"></div>
-        <div class="col-2 lb">
-            #4
-        </div>
-        <div class="col-2 lb">
-            Név 4
-        </div>
-        <div class="col-2 lb">
-            Idő 4
-        </div>
-        <div class="col-3 ures"></div>
-    </div>
-
-    <div class="row pt-3">
-        <div class="col-3 ures"></div>
-        <div class="col-2 lb">
-            #5
-        </div>
-        <div class="col-2 lb">
-            Név 5
-        </div>
-        <div class="col-2 lb">
-            Idő 5
-        </div>
-        <div class="col-3 ures"></div>
-    </div>
-
-    <div class="row pt-3">
-        <div class="col-3 ures"></div>
-        <div class="col-2 lb">
-            #6
-        </div>
-        <div class="col-2 lb">
-            Név 6
-        </div>
-        <div class="col-2 lb">
-            Idő 6
-        </div>
-        <div class="col-3 ures"></div>
-    </div>
-
-    <div class="row pt-3">
-        <div class="col-3 ures"></div>
-        <div class="col-2 lb">
-            #7
-        </div>
-        <div class="col-2 lb">
-            Név 7
-        </div>
-        <div class="col-2 lb">
-            Idő 7
-        </div>
-        <div class="col-3 ures"></div>
-    </div>
-
-    <div class="row pt-3">
-        <div class="col-3 ures"></div>
-        <div class="col-2 lb">
-            #8
-        </div>
-        <div class="col-2 lb">
-            Név 8
-        </div>
-        <div class="col-2 lb">
-            Idő 8
-        </div>
-        <div class="col-3 ures"></div>
-    </div>
-
-    <div class="row pt-3">
-        <div class="col-3 ures"></div>
-        <div class="col-2 lb">
-            #9
-        </div>
-        <div class="col-2 lb">
-            Név 9
-        </div>
-        <div class="col-2 lb">
-            Idő 9
-        </div>
-        <div class="col-3 ures"></div>
-    </div>
-
-    <div class="row pt-3">
-        <div class="col-3 ures"></div>
-        <div class="col-2 lb">
-            #10
-        </div>
-        <div class="col-2 lb">
-            Név 10
-        </div>
-        <div class="col-2 lb">
-            Idő 10
-        </div>
-        <div class="col-3 ures"></div>
     </div>
 
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="~/js/Leaderboard/LeaderboardAdatok.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#easy-button").click(function () {
+            var leaderboard = GetLeaderBoard("1");
+            leaderboard.then(function (data) {
+                // Táblázat tartalmának frissítése
+                updateLeaderboardTable(data);
+            });
+        });
 
+        $("#medium-button").click(function () {
+            var leaderboard = GetLeaderBoard("2");
+            leaderboard.then(function (data) {
+                // Táblázat tartalmának frissítése
+                updateLeaderboardTable(data);
+            });
+        });
+
+        $("#hard-button").click(function () {
+            var leaderboard = GetLeaderBoard("3");
+            leaderboard.then(function (data) {
+                // Táblázat tartalmának frissítése
+                updateLeaderboardTable(data);
+            });
+        });
+
+        // A táblázat tartalmának frissítése az adatok alapján
+        function updateLeaderboardTable(data) {
+            var tbody = $("#leaderboard-table tbody");
+            tbody.empty(); // Előző tartalom törlése
+            // Új sorok hozzáadása az adatok alapján
+            for (var i = 0; i < data.length; i++) {
+                var row = $("<tr>");
+                row.append($("<td>").text(i+1));
+                row.append($("<td>").text(data[i].JatekosNev));
+                row.append($("<td>").text(data[i].RekordIdo));
+
+                tbody.append(row);
+            }
+        }
+    });
+
+</script>
