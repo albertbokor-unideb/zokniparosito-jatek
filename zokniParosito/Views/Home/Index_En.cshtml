@@ -1,124 +1,114 @@
 ﻿@{
-ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Home Page";
 }
 
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-<style>
-body {
-    font-family: 'Comic Sans MS';
-    background-color: #f0e4d6;
-    font-size: 1em;
-}
-
-.row {
-    text-align: center;
-}
-
-.ures {
-    background-color: #f0e4d6;
-}
-
-.btn-lg {
-    width: 100%;
-    height: 100%;
-    font-size: 1em;
-    background-color: #ff6f61;
-    border: 2px solid #da3c2e;
-    color: wheat;
-    /*
-            margin-bottom: 1rem;
-            padding-bottom: 1rem;
-            */
-}
-
-    .btn-lg:hover {
-        background-color: #da3c2e;
-        color: #ff6f61;
-        border: 2px solid red;
-    }
-
-.btn:active {
-    background-color: black;
-}
-
-.btn-outline-primary {
-    width: 100%;
-    height: 100%;
-    font-size: 1em;
-    background-color: #f0e4d6;
-    border: 2px solid #da3c2e;
-    color: black;
-    /*
-            margin-bottom: 1rem;
-            padding-bottom: 1rem;
-            */
-}
-</style>
+<link rel="stylesheet" type="text/css" href="~/css/Home/Home.css">
 <div class="container">
-<div class="row">
-    <h1>Match The Socks</h1>
-</div>
-
-<div class="row">
-    <h2>MENU</h2>
-</div>
-
-<div class="row pt-3">
-    <div class="col-3 ures"></div>
-    <div class="col-6">
-        <a class="btn-lg btn-primary gomb" id="start-button" asp-area="" asp-controller="Jatek" asp-action="Game_En">Start Game</a>
+    <div class="row">
+        <h1>Match The Socks</h1>
     </div>
-    <div class="col-3 ures"></div>
-</div>
-
-<div class="row pt-3">
-    <span>Difficulty:</span>
-</div>
-
-<div class="row pt-3">
-    <div class="col-3 ures"></div>
-    <div class="col-2">
-        <button class="btn-lg btn-outline-primary gomb" data-bs-toggle="button" id="easy-button">Easy</button>
+    <div class="row">
+        <h2>MENU</h2>
     </div>
-    <div class="col-2">
-        <button class="btn-lg btn-outline-primary gomb" data-bs-toggle="button" id="medium-button">Medium</button>
-    </div>
-    <div class="col-2">
-        <button class="btn-lg btn-outline-primary gomb" data-bs-toggle="button" id="hard-button">Hard</button>
-    </div>
-    <div class="col-3 ures"></div>
-</div>
 
-<div class="row pt-3">
-    <div class="col-3 ures"></div>
-    <div class="col-6">
-        <a class="btn-lg btn-primary gomb" id="leaderboard-button" asp-area="" asp-controller="Leaderboard" asp-action="Leaderboard">Leaderboard</a>
+    <div class="row pt-3">
+        <div class="col-3 ures"></div>
+        <div class="col-6">
+            <a class="btn-lg btn-primary gomb" id="start-button">Start Game</a>
+        </div>
+        <div class="col-3 ures"></div>
     </div>
-    <div class="col-3 ures"></div>
-</div>
-
-<div class="row pt-3">
-    <span>Type your name here!</span>
-</div>
-
-<div class="row pt-3">
-    <div class="col-3 ures"></div>
-    <div class="col-6">
-        <input type="text" class="form-control" id="player-name">
+    <div class="row pt-3">
+        <span>Difficulty:</span>
     </div>
-    <div class="col-3 ures"></div>
-</div>
-
-<div class="row pt-3">
-    <div class="col-5 ures"></div>
-    <div class="col-2">
-        <a class="btn-lg btn-primary gomb" id="langbutton" asp-area="" asp-controller="Home" asp-action="Index">English</a>
+    <div class="row pt-3">
+        <div class="col-3 ures"></div>
+        <div class="col-2">
+            <button class="btn-lg btn-outline-primary gomb" data-bs-toggle="button" id="easy-button">Easy</button>
+        </div>
+        <div class="col-2">
+            <button class="btn-lg btn-outline-primary gomb" data-bs-toggle="button" id="medium-button">Medium</button>
+        </div>
+        <div class="col-2">
+            <button class="btn-lg btn-outline-primary gomb" data-bs-toggle="button" id="hard-button">Hard</button>
+        </div>
+        <div class="col-3 ures"></div>
     </div>
-    <div class="col-5 ures"></div>
-</div>
+
+    <div class="row pt-3">
+        <div class="col-3 ures"></div>
+        <div class="col-6">
+            <a class="btn-lg btn-primary gomb" id="leaderboard-button" asp-area="" asp-controller="Leaderboard" asp-action="leaderboard_en">Leaderboard</a>
+        </div>
+        <div class="col-3 ures"></div>
+    </div>
+    <div class="row pt-3">
+        <span>Type your name here!</span>
+    </div>
+    <div class="row pt-3">
+        <div class="col-3 ures"></div>
+        <div class="col-6">
+            <input type="text" class="form-control" id="player-name">
+        </div>
+        <div class="col-3 ures"></div>
+    </div>
+    <div class="row pt-3">
+        <div class="col-5 ures"></div>
+        <div class="col-2">
+            <a class="btn-lg btn-primary gomb" id="langbutton" asp-area="" asp-controller="Home" asp-action="Index_Hu">Magyar</a>
+        </div>
+        <div class="col-5 ures"></div>
+    </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="~/js/Jatek/JatekAdatok.js"></script>
+<script src="~/js/Home/PalyaAdatok.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+        // Az aktuális nehézségi szint tárolásához használt változó
+        let selectedDifficulty;
+
+        // Az "easy-button" kattintás eseménykezelője
+        document.getElementById("easy-button").addEventListener("click", function () {
+            selectedDifficulty = 2;
+        });
+
+        // A "medium-button" kattintás eseménykezelője
+        document.getElementById("medium-button").addEventListener("click", function () {
+            selectedDifficulty = 1;
+        });
+
+        // A "hard-button" kattintás eseménykezelője
+        document.getElementById("hard-button").addEventListener("click", function () {
+            selectedDifficulty = 3;
+        });
+
+        // A "start-button" kattintás eseménykezelője
+        document.getElementById("start-button").addEventListener("click", function () {
+            const playerName = document.getElementById("player-name").value;
+
+            // Ellenőrizd, hogy a felhasználó megadta-e a nevét
+            if (playerName === "") {
+                alert("Please specify your name!");
+                return;
+            }
+
+            // Ellenőrizd, hogy a felhasználó kiválasztotta-e a nehézségi szintet
+            if (!selectedDifficulty) {
+                alert("Please choose a difficulty!");
+                return;
+            }
+
+            const encodedPlayerName = encodeURIComponent(playerName);
+            const newUrl = `/Jatek/Game_En?playerName=${encodedPlayerName}&selectedDifficult=${selectedDifficulty}`;
+
+            window.location.href = newUrl;
+        });
+    });
+</script>
 
