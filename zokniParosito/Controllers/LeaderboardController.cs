@@ -15,32 +15,10 @@ namespace zokniParosito.Controllers
             _databaseService = databaseService;
         }
         [HttpGet]
-        public async Task<IActionResult> GetLeaderBoard()
+        public async Task<IActionResult> GetLeaderBoard(int PalyaID)
         {
             // Lekérdezés az összes adatból
-            var query = "SELECT * FROM Leaderboard;";
-            var leaderboardData = await _databaseService.QueryToJsonAsync<Leaderboard>(query);
-            return Ok(leaderboardData);
-        }
-        [HttpGet]
-        public async Task<IActionResult> GetLeaderBoardTopEasy()
-        {
-            // Lekérdezés az összes adatból
-            var query = "SELECT * FROM Leaderboard;";
-            var leaderboardData = await _databaseService.QueryToJsonAsync<Leaderboard>(query);
-            return Ok(leaderboardData);
-        }
-        public async Task<IActionResult> GetLeaderBoardTopMedium()
-        {
-            // Lekérdezés az összes adatból
-            var query = "SELECT * FROM Leaderboard;";
-            var leaderboardData = await _databaseService.QueryToJsonAsync<Leaderboard>(query);
-            return Ok(leaderboardData);
-        }
-        public async Task<IActionResult> GetLeaderBoardTopHard()
-        {
-            // Lekérdezés az összes adatból
-            var query = "SELECT * FROM Leaderboard;";
+            var query = "SELECT TOP 10 * FROM Leaderboard WHERE PalyaID = "+ PalyaID+";";
             var leaderboardData = await _databaseService.QueryToJsonAsync<Leaderboard>(query);
             return Ok(leaderboardData);
         }

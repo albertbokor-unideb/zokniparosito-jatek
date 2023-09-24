@@ -1,4 +1,6 @@
-﻿namespace zokniParosito.Models
+﻿using System.Net.NetworkInformation;
+
+namespace zokniParosito.Models
 {
     public class Leaderboard
     {
@@ -6,5 +8,6 @@
         public DateTime Datum { get; set; }
         public string JatekosNev { get; set; }
         public int RekordIdo { get; set; }
+        public int PalyaID { get; set; }
     }
 }
