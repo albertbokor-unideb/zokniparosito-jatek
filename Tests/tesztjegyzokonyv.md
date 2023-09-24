@@ -243,6 +243,38 @@ Ranglista kiiratása előre feltöltött adatbázisból
 #### Teszt állapota: Sikeres
 
 
+### Teszt #6: játszma elmentése a ranglisztába
+
+#### Teszt Rövid Leírása
+játszma lejátszás után megnézzük hogy elmentette-e a játékosnév+játékidő rekordot a megfelelő nehézségi fokozat táblázatába
+
+#### Tesztesetek
+
+#### 1. Könnyű fokozat, Firefox 117.0.1 desktop
+**Eredmény:** rekord sikeresen elmentve ✅
+#### 2. Könnyű fokozat, Chrome 116.0.5845.188 desktop
+**Eredmény:** rekord sikeresen elmentve ✅
+#### 3. Könnyű fokozat, Edge 117.0.2045.41 desktop
+**Eredmény:** rekord sikeresen elmentve ✅
+
+#### 4. Közepes fokozat, Firefox 117.0.1 desktop
+**Eredmény:** rekord sikeresen elmentve ✅
+#### 5. Közepes fokozat, Chrome 116.0.5845.188 desktop
+**Eredmény:** rekord sikeresen elmentve ✅
+#### 6. Közepes fokozat, Edge 117.0.2045.41 desktop
+**Eredmény:** rekord sikeresen elmentve ✅
+
+#### 7. Nehéz fokozat, Firefox 117.0.1 desktop
+**Eredmény:** rekord sikeresen elmentve ✅
+#### 8. Nehéz fokozat, Chrome 116.0.5845.188 desktop
+**Eredmény:** rekord sikeresen elmentve ✅
+#### 9. Nehéz fokozat, Edge 117.0.2045.41 desktop
+**Eredmény:** rekord sikeresen elmentve ✅
+
+#### Teszt állapota: Sikeres
+
+
+
 
 
 ## Tesztek Összegzése
