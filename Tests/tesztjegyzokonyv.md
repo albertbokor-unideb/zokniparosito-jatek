@@ -22,22 +22,33 @@ Az alábbiakban talál egy példa szoftvertesztelési jegyzőkönyv mintájára.
 Főmenü, Játék és Ranglista oldal megjelenése különböző ablakméreteken 
 
 #### Tesztesetek
-(A)--Főmenü
-(B)--Játék
-(C)--Ranglista
-1. Firefox desktpo
-2. Firefox mobile
-3. Chrome desktop
-4. Chrome mobile
-5. Edge desktop
+
+1. Főmenü, Firefox desktpo
+2. Főmenü, Firefox mobile
+3. Főmenü, Chrome desktop
+4. Főmenü, Chrome mobile
+5. Főmenü, Edge desktop
+6. Játék, Firefox desktpo
+7. Játék, Firefox mobile
+8. Játék, Chrome desktop
+9. Játék, Chrome mobile
+10. Játék, Edge desktop
+11. Ranglista, Firefox desktpo
+12. Ranglista, Firefox mobile
+13. Ranglista, Chrome desktop
+14. Ranglista, Chrome mobile
+15. Ranglista, Edge desktop
 
 
 #### Eredmények
-- desktop nézeteken 440px minimális szélesség, mobil nézetben kisebb is elérhető de úgy már kezdenek egymásba lógni a gombok
+- desktop nézeteken 440px minimális szélesség, mobil nézetben kisebb is elérhető, de ezen a méreten már kezdenek egymásba lógni a feliratok
 - a böngészők kőzül egyikben sem tért el látványosan az oldalak megjelenése
 
-![index](screenshot/desktop_min_width_index.png)
-![jatek](screenshot/desktop_min_width_jatek.png)
+![index](screenshot/windowsize_index.png)
+![jatek](screenshot/windowsize_jatek.png)
+
+
+![leaderboard](screenshot/windowsize_leaderboard.png)
 
 #### Teszt állapota: Sikeres
 
