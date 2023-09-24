@@ -97,12 +97,44 @@ Ezt az osztályt is az Objektum orientált programozás elvei alapján kell lét
 
 ### Modell
 Létre kell hozni a táblák modelljét. A fejlesztés C#-ban történik. Amelyeknek pontosan illeszkednie kell az adatbázisban tárolt adatokhoz. (típusegyezés feltétel)
+Adatelérés és üzleti logika: A modell felelős az alkalmazás adatelérési rétegének és üzleti logikájának implementálásáért. Ez lehetővé teszi az adatok kezelését, lekérdezését, módosítását és validálását.
+Entitások és adatok reprezentálása: A modell definiálja az alkalmazásban használt entitásokat és adatszerkezeteket. Ezek az entitások tükrözik az alkalmazásban kezelt adatokat, és gyakran a példányok (objektumok) formájában vannak jelen, amelyek adatait az adatbázisból vagy más forrásokból töltik be.
 
 ### Controller
 A controllerből kell meghívni az oldalakat. A View-t ezzel jelenítjük meg. Itt kell létrehozni az SQL lekérdezéseket(SELECT) illetve a SQL INSERT-eket. A parancsok itt kerülnek létrehozásra. 
 
+HTTP kérések kezelése: A Controller fogadja és kezeli az HTTP kéréseket, amelyek érkeznek a webalkalmazásba. Ezek a kérések lehetnek például GET, POST, PUT vagy DELETE kérések, és különböző útválasztásokhoz és akciókhoz vezetnek.
+
+Nézetek megjelenítése: A Controller felelős a nézetek (View) kiválasztásáért és megjelenítéséért. A nézetek tartalmazzák az oldalak HTML kódját és az adatok megjelenítéséhez szükséges elemeket. A Controller által választott nézetek a kliens böngészőjében jelennek meg.
+
+Üzleti logika: A Controller tartalmazhat üzleti logikát, amelyet végrehajt a HTTP kérés kezelése során. Ez magában foglalhatja az adatbázisból adatok lekérdezését, feldolgozását, validálását és más műveleteket, amelyek szükségesek a kérés feldolgozásához.
+
+Modellel való kommunikáció: A Controller kapcsolatot teremt a Model (modell) réteggel, és az Model rétegből származó adatokat használja a nézetekben való megjelenítéshez vagy az üzleti logika végrehajtásához. Ezenkívül a Controller felelős az adatokat a Model rétegbe való visszairányításáért.
+
+HTTP válaszok létrehozása: A Controller létrehozza az HTTP válaszokat, amelyeket a szerver küld a kliensnek. Ezek a válaszok tartalmazhatnak HTML oldalakat, JSON adatokat vagy más típusú válaszokat, például fájlokat.
+
+Útválasztás és útvonalvezérlés: A Controller dönti el, hogy melyik akciót hajtja végre egy adott HTTP kérés. Az útvonalvezérlés (routing) segítségével az alkalmazás meghatározza, hogy melyik Controller és akció felel meg a beérkező kérésnek.
+
+HTTP kérés paraméterek kezelése: A Controller fogadja és kezeli az HTTP kérések paramétereit, például az URL-ben vagy a HTTP testben található adatokat. Ezek a paraméterek segítenek az akciók személyre szabásában és az adatok feldolgozásában.
+
+Összességében a Controller a központi elem az MVC modellben, amely összekapcsolja a felhasználói felületet (View) az alkalmazás logikájával és az adatokkal (Model). Felelős az HTTP kérések feldolgozásáért, az üzleti logika végrehajtásáért és a megfelelő válaszok létrehozásáért a kliensnek.
+
 #### - Ajax hívások
 **Jquerry** segítségével Ajax hívásokat küldünk a Controller megfelelő metódusaira. Ezek lehetnek **GET** Illetve **POST** hívások. Itt tudunk adatot irányítani a View és a Controller között. Kifejezetten JSON-ben várjuk az adatokat. 
+
+Az Ajax hívások a webes alkalmazásokban lehetővé teszik aszinkron kérések küldését a kliens és a szerver között anélkül, hogy a teljes oldalfrissítést kellene végrehajtani. A jQuery segítségével könnyedén kezelhetjük ezeket a kéréseket, és adatokat küldhetünk a Controller metódusaihoz. Itt van néhány további információ az Ajax hívásokról és a JSON adatkommunikációról:
+
+Aszinkron kommunikáció: Az Ajax hívások lehetővé teszik a böngésző és a szerver közötti aszinkron kommunikációt. Ez azt jelenti, hogy a felhasználó továbbra is használhatja az alkalmazást, miközben a háttérben adatokat kér le vagy küld.
+
+GET és POST kérések: Az Ajax hívások lehetnek GET vagy POST kérések. A GET kérések általában adatok lekérdezésére szolgálnak a szerverről, míg a POST kérések adatok küldésére a szervernek.
+
+JSON adatok: Az Ajax hívások általában JSON (JavaScript Object Notation) formátumban küldik és fogadják az adatokat. Ez egy könnyen olvasható és írható adatformátum, amely jól alkalmazható a kliens és a szerver közötti adatkommunikációra.
+
+Adatok irányítása a Controller és a View között: Az Ajax hívások lehetővé teszik az adatok irányítását a Controller és a View között. A kliens oldali JavaScript segítségével készíthetünk HTTP kéréseket a Controller metódusaihoz, majd a Controller válaszaként kapott adatokat beállíthatjuk vagy megjeleníthetjük a View-ban.
+
+Dinamikus frissítések: Az Ajax hívások segítségével dinamikus frissítéseket hajthatunk végre a weboldalon anélkül, hogy az egész oldalt újratöltenénk. Például egy űrlap elküldése után azonnal megjeleníthetjük a választ a felhasználónak a Controller válaszaként.
+
+Az Ajax hívások hasznosak olyan helyzetekben, amikor a felhasználói interakciók során szükség van az oldal tartalmának frissítésére vagy adatok dinamikus lekérdezésére a szerverről anélkül, hogy a teljes oldalt újratöltenénk. Ez növelheti az alkalmazás teljesítményét és interaktivitását. Az adatok JSON formátumban történő használata lehetővé teszi az egyszerű és hatékony adatkommunikációt a kliens és a szerver között.
 
 ### View 
 A View-ról részletesebben a [Frontend Fejlesztés](https://github.com/albertbokor-unideb/zokniparosito-jatek/blob/main/ProjectStructure/rendszerterv.md#frontend-fejlesztés)-ben olvashat!
@@ -110,6 +142,11 @@ A View-ról részletesebben a [Frontend Fejlesztés](https://github.com/albertbo
 
 ### AppSettings.json
 Ebben a .json fájlban tároljuk el a *SQL connection* stringet, amit a DB service felhasznál a kapcsolat kiépítése érdekében. 
+Az appsettings.json egy JSON-formátumú konfigurációs fájl, amelyet gyakran használnak ASP.NET Core alkalmazásokban a beállítások és konfigurációk tárolására. A fájl tartalmazza az alkalmazás különböző részeihez kapcsolódó beállításokat, például adatbázis kapcsolatokat, naplózási szinteket, engedélyezett hosztokat és egyéb konfigurációs adatokat.
+
+Ez a fájl segít az alkalmazás konfigurálásában és testreszabásában anélkül, hogy a forráskódot módosítanánk. Az alkalmazások gyakran használják, hogy eltérő beállításokat használjanak különböző környezetekben, például fejlesztés, tesztelés vagy élesítés közben.
+
+Az appsettings.json fájlt a .NET Core alkalmazásokban használják, és a .NET Core konfigurációs rendszerrel van integrálva. Az alkalmazások ebből a fájlból olvassák ki a konfigurációt, amelyet aztán felhasználhatnak az alkalmazás működésének szabályozására. A fájlban található beállításokat könnyű módosítani, ami lehetővé teszi az alkalmazás viselkedésének rugalmas testreszabását.
 
 
 ### Program.cs
