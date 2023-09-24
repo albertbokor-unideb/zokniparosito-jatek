@@ -41,7 +41,7 @@ ViewData["Title"] = "Home Page";
 <div class="row pt-3">
     <div class="col-3 ures"></div>
     <div class="col-6">
-            <a class="btn-lg btn-primary gomb" id="leaderboard-button" asp-area="" asp-controller="Leaderboard" asp-action="Leaderboard">Ranglista</a>
+            <a class="btn-lg btn-primary gomb" id="leaderboard-button" asp-area="" asp-controller="Leaderboard" asp-action="leaderboard_hu">Ranglista</a>
     </div>
     <div class="col-3 ures"></div>
 </div>
@@ -75,12 +75,12 @@ ViewData["Title"] = "Home Page";
 
         // Az "easy-button" kattintás eseménykezelője
         document.getElementById("easy-button").addEventListener("click", function () {
-            selectedDifficulty = 1;
+            selectedDifficulty = 2;
         });
 
         // A "medium-button" kattintás eseménykezelője
         document.getElementById("medium-button").addEventListener("click", function () {
-            selectedDifficulty = 2;
+            selectedDifficulty = 1;
         });
 
         // A "hard-button" kattintás eseménykezelője

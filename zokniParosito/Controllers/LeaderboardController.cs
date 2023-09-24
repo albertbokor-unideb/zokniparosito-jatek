@@ -22,6 +22,28 @@ namespace zokniParosito.Controllers
             var leaderboardData = await _databaseService.QueryToJsonAsync<Leaderboard>(query);
             return Ok(leaderboardData);
         }
+        [HttpGet]
+        public async Task<IActionResult> GetLeaderBoardTopEasy()
+        {
+            // Lekérdezés az összes adatból
+            var query = "SELECT * FROM Leaderboard;";
+            var leaderboardData = await _databaseService.QueryToJsonAsync<Leaderboard>(query);
+            return Ok(leaderboardData);
+        }
+        public async Task<IActionResult> GetLeaderBoardTopMedium()
+        {
+            // Lekérdezés az összes adatból
+            var query = "SELECT * FROM Leaderboard;";
+            var leaderboardData = await _databaseService.QueryToJsonAsync<Leaderboard>(query);
+            return Ok(leaderboardData);
+        }
+        public async Task<IActionResult> GetLeaderBoardTopHard()
+        {
+            // Lekérdezés az összes adatból
+            var query = "SELECT * FROM Leaderboard;";
+            var leaderboardData = await _databaseService.QueryToJsonAsync<Leaderboard>(query);
+            return Ok(leaderboardData);
+        }
 
         [HttpPost]
         public async Task<IActionResult> InsertLeaderBoard(string JatekosNev, string RekordIdo, string PalyaID)
@@ -61,7 +83,11 @@ namespace zokniParosito.Controllers
         }
 
 
-        public IActionResult Leaderboard()
+        public IActionResult leaderboard_hu()
+        {
+            return View();
+        }
+        public IActionResult leaderboard_en()
         {
             return View();
         }

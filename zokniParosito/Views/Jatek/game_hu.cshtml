@@ -1,5 +1,5 @@
 ﻿@{
-ViewData["Title"] = "Leaderboard";
+ViewData["Title"] = "Game_Hu";
 
 }
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -89,10 +89,13 @@ GetZoknikByNehezseg(selectedDifficult)
                 img.id = data[i-1].ZokniID;
                 img.src = '/resource/' + data[i - 1].Kep; // Kép elérési útjának beállítása
                 img.alt = data[i - 1].Nev; // Opcionális: képalternatíva beállítása
-
+              
                 // Kép hozzáadása a gomb tartalmához
                 gomb.innerHTML = ''; // Töröld a gomb tartalmát
                 gomb.appendChild(img); // Hozzáadja a képet a gombhoz
+                console.log(img.id + ":" + img.src + ":" + img.alt);
+                console.log(gomb.id)
+                    let connection;
             }
         }
         for (let i = 6; i <= 10; i++) {
@@ -110,6 +113,9 @@ GetZoknikByNehezseg(selectedDifficult)
                 // Kép hozzáadása a gomb tartalmához
                 gomb.innerHTML = ''; // Töröld a gomb tartalmát
                 gomb.appendChild(img); // Hozzáadja a képet a gombhoz
+                console.log(img.id + ":" + img.src + ":" + img.alt);
+                    console.log(gomb.id)
+                    let connection;
             }
         }
            
