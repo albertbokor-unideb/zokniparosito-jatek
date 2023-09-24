@@ -78,6 +78,30 @@ főmenü oldalon nyelv váltó gomb megfelelően működik, a többi oldal is sz
 #### Teszt állapota: Sikeres
 
 
+### Teszt #3: Játék inditása
+
+#### Teszt Rövid Leírása
+Főmenüből megpróbáljuk elinditani a játékot 
+
+#### Tesztesetek
+
+1. üres mezőkkel
+2. név megadva
+3. nehézségi fokozat megadva
+4. név és nehézségi fokozat megadva
+
+#### Eredmények
+A játék csak abban az esetben indul el ha előtte megadtuk a nevet és a nehézségi fokozatot is
+
+![index](screenshot/start_empty.png)
+![jatek](screenshot/start_nodif.png)
+
+
+#### Teszt állapota: Sikeres
+
+
+
+
 ## Tesztek Összegzése
 
 
