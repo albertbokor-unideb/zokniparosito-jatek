@@ -53,6 +53,30 @@ Főmenü, Játék és Ranglista oldal megjelenése különböző ablakméreteken
 #### Teszt állapota: Sikeres
 
 
+### Teszt #2: Oldal nyelv váltás
+
+#### Teszt Rövid Leírása
+Főmenü, Játék és Ranglista oldal nyelvének megjelenése angol és magyar nyelven 
+
+#### Tesztesetek
+
+1. Főmenü, magyar
+2. Főmenü, angol
+3. Játék, magyar
+4. Játék, angol
+5. Ranglista, magyar
+6. Ranglista, angol
+
+
+#### Eredmények
+főmenü oldalon nyelv váltó gomb megfelelően működik, a többi oldal is szépen megjelenik a beállitott nyelven
+
+![index](screenshot/english_index.png)
+![jatek](screenshot/english_jatek.png)
+
+
+#### Teszt állapota: Sikeres
+
 
 ## Tesztek Összegzése
 
