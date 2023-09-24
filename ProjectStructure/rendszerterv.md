@@ -2,6 +2,8 @@
 # Zoknipárosító Webalkalmazás Rendszerterve
 
 ## Architektúra
+**A fejlesztés során az OOP (Objektum Orientált Programozás) alapelveinek megfelelően kell eljárni.**
+
 
 Az alkalmazás egy háromrétegű architektúrával fog működni:
 
@@ -15,6 +17,10 @@ Az alkalmazás egy háromrétegű architektúrával fog működni:
 
 ![](https://github.com/albertbokor-unideb/zokniparosito-jatek/blob/main/ProjectStructure/img/Architekturális%20terv.png)
 
+## Üzleti folyamatok modell
+
+![](https://github.com/albertbokor-unideb/zokniparosito-jatek/blob/main/ProjectStructure/img/üzleti%20folyamatok.png)
+
 ## Adatbázis
 
 Az alkalmazás egy SQL adatbázist használ a felhasználói adatok és a játék eredményeinek tárolására. Az adatbázis tartalmazza a következő táblákat:
@@ -22,6 +28,15 @@ Az alkalmazás egy SQL adatbázist használ a felhasználói adatok és a játé
 1. **leaderboard**: Ebben a táblában rögzítjük a játékosok játék eredményeit, beleértve a játékos nevét, a pontszámát, a nehézségi fokozatot és a játék dátumát.
 2. **zokni**: Ebben a táblában rögzítjük a különböző zokinik modelljét, amelyeket ellátunk egy id-val is és nehézségi szinttel is. A játék betöltésekor innen nyerjük ki véletlenszerűen a bizonyos nehézségi szinthez járó zoknik számát és nehézségi szintjét.
 3. **palyak**: A Pályák nevű táblában tároljuk a pálya nevét, nehézségét és az időkorlátot amely alatt teljesíteni kell a megadott pályát.
+
+### DatabaseService() 
+Ezt az osztályt is az Objektum orientált programozás elvei alapján kell létrehozni.
+#### Ez felel:
+- Az adatbázishoz való csatlakozásért
+- Sikeres kapcsolat felállítása
+- Az SQL lekérdezésekért
+- Az SQL parancsok futtatásáért
+
 
 ### Adatbázis modell terv
 
@@ -34,7 +49,7 @@ A játék során a megadott játékelemeket az adatbázis redundancia nélkül k
 Az adatbázisban emellett a játékosok Leadboard (eredményekk) adatait is tároljuk. A tábla tartalmazza a játékos felhasználónevét, a játék dátumát, nehézségi szintjét és a játék idejét is. 
 
 ### Assetek létrehozása (Játékelemek)
-A játékelemeket .svg kiterjesztésben hozzuk létre, ami vektorgrafikus képábrázolást jelent. A vektorgrafikus képábrázolás előnyei a következők a mi esetünkben:
+A játékelemeket Adobe Illustrator-ban hozzuk létre .svg kiterjesztésben, ami vektorgrafikus képábrázolást jelent. A vektorgrafikus képábrázolás előnyei a következők a mi esetünkben:
 - A képek mindig élesek lesznek attól függetlenül, hogy milyen felületen játszik a játékos
 - A képeket könnyű módosítani
 - A képek nem torzulnak el a megjelnítő felület változásától. (Pl. Ha nem teljes képernyőn játszik a játékos, akkor a játékelemek idomulnak a megjelenítő eszköz méretéhez.)
@@ -56,7 +71,50 @@ Az alkalmazás webes felhasználói felületet használ, amely HTML, CSS és Jav
 ## Backend Fejlesztés
 A backend fejlesztés során a .NET Core keretrendszert használjuk, amely lehetővé teszi a könnyű és hatékony fejlesztést, valamint a webalkalmazásunk könnyű telepítését és kezelését. A .NET Core alkalmazás tartalmazza az üzleti logikát, a játékmenet vezérlését, a leaderboard kezelését és az adatbázis kapcsolatot.
 
-A fejlesztés során kifejezett figyelmet kell fordítani a skálzhatóságra és az adatbázis agilis működésére. 
+A fejlesztés során kifejezett figyelmet kell fordítani a skálzhatóságra és az adatbázis agilis működésére.
+
+**A fejlesztés követi az MVC fejlesztési konvenciót!**
+
+![](https://github.com/albertbokor-unideb/zokniparosito-jatek/blob/main/ProjectStructure/img/MVC_Ajax.png)
+
+#### Használandó technológiák
+ 
+- Adatbázis típus és verzió: MariaDB 
+- - MariaDB 10.8.28
+- - Webkiszolgáló: Apache 2.4.56
+- - PHP Myadmin 5.2.1
+- Adatbázis tervezés: DBForge Studio
+- Helyi adatbázis futtatása: Xampp
+
+
+### DatabaseService osztály 
+Ezt az osztályt is az Objektum orientált programozás elvei alapján kell létrehozni.
+#### Ez felel:
+- Az adatbázishoz való csatlakozásért
+- Sikeres kapcsolat felállítása
+- Az SQL lekérdezésekért
+- Az SQL parancsok futtatásáért
+
+### Modell
+Létre kell hozni a táblák modelljét. A fejlesztés C#-ban történik. Amelyeknek pontosan illeszkednie kell az adatbázisban tárolt adatokhoz. (típusegyezés feltétel)
+
+### Controller
+A controllerből kell meghívni az oldalakat. A View-t ezzel jelenítjük meg. Itt kell létrehozni az SQL lekérdezéseket(SELECT) illetve a SQL INSERT-eket. A parancsok itt kerülnek létrehozásra. 
+
+#### - Ajax hívások
+**Jquerry** segítségével Ajax hívásokat küldünk a Controller megfelelő metódusaira. Ezek lehetnek **GET** Illetve **POST** hívások. Itt tudunk adatot irányítani a View és a Controller között. Kifejezetten JSON-ben várjuk az adatokat. 
+
+### View 
+A View-ról részletesebben a [Frontend Fejlesztés]()-ben olvashat!
+
+
+### AppSettings.json
+Ebben a .json fájlban tároljuk el a *SQL connection* stringet, amit a DB service felhasznál a kapcsolat kiépítése érdekében. 
+
+
+### Program.cs
+Az ASP .net Core belépési pontja, és inicializálja az alkalmazás szolgáltatásait beállítja a konfigurációt és konfigurálja a HTTP kérési feldolgozást az alkalmazásban. 
+
 
 ## Frontend Fejlesztés
 A frontend fejlesztés során HTML, CSS és JavaScript nyelveket használjnuk. Ezek a technológiák lehetővé teszik a modern és reszponzív felhasználói felület kialakítását. A felhasználói felület elemeket, például a játékterületet és a menüt HTML és CSS segítségével hozzuk létre és formázzuk meg, míg a kliensoldali logika és interakciókat JavaScript segítségével valósítjuk meg.
@@ -72,6 +130,40 @@ A felhasználói felület fejlesztése során kifejezett figyelmet kell fordíta
 ### Leaderboard terv
 ![](https://github.com/albertbokor-unideb/zokniparosito-jatek/blob/main/ProjectStructure/img/leaderboard_frontend_terv.png)
 
+## Bootstrap
+
+## Javascript
+A játék mechanikáját itt hozzuk létre. Tárolja az AJAX hívásokat. Kigenerálja a játékfelületre az AJAX hívásokból kapott információkat és megjeleníti a játékos számára.
+
+A Leaderboardban egy **for** ciklus segítségével ki kell generálni és megjeleníteni az adatot.
+
+Az index oldalokon a játékosnév hiányát itt kell lekezelni a nehézségi fokozat választás mellett. A játék addig nem indulhat el míg a játékos nem választ fokozatot és nem ad meg egy felhasználónevet (Játékosnevet). A program hibaüzenetet kell, hogy visszadobjon ha ezeknek a feltételeknek nem tesz eleget.
+
+A játékost a kiválasztott nehézségi szint alapján elnavigáljuk az ahhoz korreszpondáló pályához. 
+
+#### Játék
+A fentebb kiválasztott nehézségi fokozat alapján meghívjuk a hozzá tartozó AJAX hívást az adott szinthez tartozó játékelemek kigenerálásához és megjelenítéséhez. 
+A játék mechanizmusáért a Javascript elem felel. A .js fájlban van eltárolva a párosztatási mechanizmus is.
+
+A játék végén meghívjuk azt az AJAX hívást, amivel eltároljuk az adott játék és játékos játékadatait. (Név, nehézség, idő)
+
+
+### Áttekintés
+Bootstrap egy népszerű, nyílt forráskódú CSS és JavaScript keretrendszer, amelyet a Twitter fejlesztett ki. Ez egy olyan eszköz, amely lehetővé teszi a gyors és egyszerű webes alkalmazások és weboldalak fejlesztését, anélkül, hogy az összes stílust és interakciót teljesen nulláról kellene létrehozni.
+
+### Bootstrap használata a Felhasználói Interfész fejlesztésében
+
+Az alkalmazás felhasználói interfészének fejlesztése során a Bootstrap keretrendszert alkalmazzuk az alábbi módon:
+
+- HTML és CSS: Bootstrap beillesztése a projektünk HTML és CSS fájljaiba egyszerű. Az előre elkészített CSS osztályokat és komponenseket egyszerűen hozzáadhatjuk az HTML elemekhez, így könnyen formázhatjuk azokat.
+
+- Responszív design: Bootstrap segítségével könnyen kialakíthatjuk az alkalmazásunk responszív designját. Az osztályok, például a "container" és a "row", lehetővé teszik a tartalom elrendezését különböző kijelzőméretekre.
+
+- Komponensek: Bootstrap számos előre elkészített komponenst kínál, mint például gombok, űrlapok, navigációs menük és modálok. Ezeket könnyen használhatjuk az alkalmazásunkban, és testreszabhatjuk őket az igényeink szerint.
+
+- JavaScript komponensek: Bootstrap tartalmaz olyan JavaScript alapú komponenseket is, mint például üzenetablakok és húzható-csempék. Ezekkel az interakciókkal gazdagíthatjuk az alkalmazásunkat.
+
+- Testreszabhatóság: Bár Bootstrap előre elkészített stílusokat kínál, könnyen testre szabhatjuk azokat a saját design elképzeléseink szerint. Ezt saját CSS stílusok hozzáadásával vagy az alap stílusok felülírásával tehetjük meg.
 ## Biztonság
 
 A játék jelenleg nem tartalmaz bejelentkezési opciót, ezért nem tárolunk személyes adatokat a felhasználótól. A megadható játékosnév adat nem esik GRDP köteles tárolásmód alá. A játék nem tárol böngésző adatokat sem.
@@ -118,6 +210,7 @@ A fejlesztői környezetként a Visual Studio-t használjuk, amely egy erőtelje
  #### Ábrák
  - Lucidcharts 
  - Paint
+ - Adobe Illustrator
  #### Kommunikáció
  - Discord
  - Messenger
@@ -128,8 +221,12 @@ A fejlesztői környezetként a Visual Studio-t használjuk, amely egy erőtelje
  #### Egyéb használt szoftverek
  - Microsoft Word
  - Gmail
- - Xampp
-
+ 
+#### Használt packagek
+ - Newtonsoft.Json 13.0.3
+ - Mysql Connector 2.2.7
+ - Xampp 8.2.4
+ 
 ## Böngészők és Platformok Támogatása
 Az alkalmazás fejlesztése során a Google Chrome böngészőt használunk mint a fő fejlesztői platform. Azonban fontos, hogy az alkalmazás több böngészőben is megfelelően működjön, például Firefox, Safari és Edge. Az alkalmazás reszponzív dizájnt használ, így különböző eszközökön, például asztali számítógépeken, laptopokon, tableteken és mobiltelefonokon is jól működjön.
 
