@@ -150,7 +150,6 @@ Főmenü, Játék és Ranglista oldal nyelvének megjelenése angol és magyar n
 #### Teszt állapota: Sikeres
 
 
-
 ### Teszt #3: Játék inditása
 
 #### Teszt Rövid Leírása
@@ -165,13 +164,35 @@ Főmenüből megpróbáljuk elinditani a játékot
 #### 3. üres mezőkkel, Edge 117.0.2045.41 desktop
 **Eredmény:** popup-ot dob `Kérlek add meg a neved!` felirattal ✅
 
+#### 4. név megadva, Firefox 117.0.1 desktop
+**Eredmény:** popup-ot dob `Kérlek válassz egy nehézségi szintet!` felirattal ✅
+#### 5. név megadva, Chrome 116.0.5845.188 desktop
+**Eredmény:** popup-ot dob `Kérlek válassz egy nehézségi szintet!` felirattal ✅
+#### 6. név megadva, Edge 117.0.2045.41 desktop
+**Eredmény:** popup-ot dob `Kérlek válassz egy nehézségi szintet!` felirattal ✅
+
+#### 7. nehézségi fokozat megadva, Firefox 117.0.1 desktop
+**Eredmény:** popup-ot dob `Kérlek add meg a neved!` felirattal ✅
+#### 8. nehézségi fokozat megadva, Chrome 116.0.5845.188 desktop
+**Eredmény:** popup-ot dob `Kérlek add meg a neved!` felirattal ✅
+#### 9. nehézségi fokozat megadva, Edge 117.0.2045.41 desktop
+**Eredmény:** popup-ot dob `Kérlek add meg a neved!` felirattal ✅
+
+#### 10. név és nehézségi fokozat megadva, Firefox 117.0.1 desktop
+**Eredmény:** játék elindul ✅
+#### 11. név és nehézségi fokozat megadva, Chrome 116.0.5845.188 desktop
+**Eredmény:** játék elindul ✅
+#### 12. név és nehézségi fokozat megadva, Edge 117.0.2045.41 desktop
+**Eredmény:** játék elindul ✅
 
 
+### Teszt #4: Többszörös kijelölés
 
-1. üres mezőkkel
-2. név megadva
-3. nehézségi fokozat megadva
-4. név és nehézségi fokozat megadva
+#### Teszt Rövid Leírása
+Főmenüből megpróbáljuk elinditani a játékot 
+
+#### Tesztesetek
+
 
 #### Eredmények
 A játék csak abban az esetben indul el ha előtte megadtuk a nevet és a nehézségi fokozatot is
