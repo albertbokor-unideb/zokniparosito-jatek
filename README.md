@@ -6,4 +6,4 @@
 - [Szoftver Tesztelési Jegyzőkönyv Minta](https://github.com/albertbokor-unideb/zokniparosito-jatek/blob/main/ProjectStructure/tesztjegyzokonyv_minta.md)
   
 **---------------------------------------**
-- [Trello](https://trello.com/b/KFyL7q4r/szfm2023)
+- [Trello](https://trello.com/b/DM3GPvPf/szfm23)
