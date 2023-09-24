@@ -105,7 +105,7 @@ A controllerből kell meghívni az oldalakat. A View-t ezzel jelenítjük meg. I
 **Jquerry** segítségével Ajax hívásokat küldünk a Controller megfelelő metódusaira. Ezek lehetnek **GET** Illetve **POST** hívások. Itt tudunk adatot irányítani a View és a Controller között. Kifejezetten JSON-ben várjuk az adatokat. 
 
 ### View 
-A View-ról részletesebben a [Frontend Fejlesztés]()-ben olvashat!
+A View-ról részletesebben a [Frontend Fejlesztés](https://github.com/albertbokor-unideb/zokniparosito-jatek/blob/main/ProjectStructure/rendszerterv.md#frontend-fejlesztés)-ben olvashat!
 
 
 ### AppSettings.json
