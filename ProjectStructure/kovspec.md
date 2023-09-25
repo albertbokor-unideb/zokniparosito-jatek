@@ -17,7 +17,6 @@ A zoknipárosító játék egy szórakoztató és kihívást jelentő alkalmazá
 1. Az alkalmazásnak modern és felhasználóbarát grafikus felhasználói interfésszel kell rendelkeznie, amely egyszerűen kezelhető és vonzó.
 2. A játékterületen jól láthatóan és egyértelműen jelenjenek meg a zoknik.
 
-   ![](https://github.com/albertbokor-unideb/zokniparosito-jatek/blob/main/ProjectStructure/img/Untitled.png)
 
 ### Nehézségi fokozatok
 3. A játék három nehézségi fokozattal rendelkezik: könnyű, közepes és nehéz.
