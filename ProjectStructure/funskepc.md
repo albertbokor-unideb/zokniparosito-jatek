@@ -8,7 +8,15 @@ A zoknipárosító webalkalmazás egy olyan játékot kínál a felhasználókna
 
 ### Bejelentkezés és Regisztráció
 
-1. A felhasználóknak lehetőséget kell kapniuk a nevük elmentéséhez és a játékadatok névhez való rendeléséhez.
+- A felhasználóknak lehetőséget kell kapniuk a nevük elmentéséhez és a játékadatok névhez való rendeléséhez.
+- A felhasználó adatait nem tároljuk. Esetleges adattárolást a böngésző végezhet!
+
+### Felhasználói interfész
+- Az alkalmazásnak modern és felhasználóbarát grafikus felhasználói interfésszel kell rendelkeznie, amely egyszerűen kezelhető és vonzó.
+- A játékterületen jól láthatóan és egyértelműen jelenjenek meg a zoknik.
+
+   ![](https://github.com/albertbokor-unideb/zokniparosito-jatek/blob/main/ProjectStructure/img/Untitled.png)
+
 
 ### Főoldal
 
@@ -51,7 +59,23 @@ A zoknipárosító webalkalmazás egy olyan játékot kínál a felhasználókna
 18. Az alkalmazást alaposan teszteljük, beleértve az egyes funkciók, a teljesítmény és nyelvi beállítások helyességét.
 19. A tesztelés folyamata alatt tesztelési jegyzőkönyvet kell kitöltenie a tesztelőnek minden tesztesetről.
 
+### Többnyelvűség
+Az alkalmazásnak támogatnia kell többnyelvűséget, hogy a felhasználók különböző nyelveken használhassák. Az alapértelmezett nyelv mellett a felhasználóknak választhatóan lehetőségük kell kapniuk a nyelv megváltoztatására, ami a felhasználói élmény sokszínűsítését szolgálja
 
+### Mobilalkalmazás Támogatás
+Az alkalmazásnak lehetőséget kell biztosítania a mobilalkalmazásokhoz történő konverzióhoz, hogy a felhasználók különböző platformokon is élvezhessék a játékot. A mobilalkalmazásoknak is támogatniuk kell az előzően említett funkciókat és elvárásokat.
+
+### Felhasználói Visszajelzések
+Az alkalmazásnak lehetőséget kell biztosítania a felhasználóknak, hogy visszajelzéseket küldjenek a fejlesztőknek. Ez segíthet az alkalmazás továbbfejlesztésében és hibajavításában.
+
+[SECURITY DETAILS](https://github.com/albertbokor-unideb/zokniparosito-jatek/blob/main/SECURITY.md)
+
+## Általános elvárások
+- Könnyen üzemeltethető
+- Gyerekek és fiatalkorúak számára könnyen kezelhető és átlátható weboldal
+- Intuitív menürendszer
+- Többnyelvűség
+- Reszponzív dizájn
 
 ## Dokumentáció
 
