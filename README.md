@@ -6,5 +6,5 @@
 - [Szoftver Tesztelési Jegyzőkönyv Minta](https://github.com/albertbokor-unideb/zokniparosito-jatek/blob/main/ProjectStructure/tesztjegyzokonyv_minta.md)
   
 **---------------------------------------**
-- [Hoszolt weboldal](https://szfmnagy23.000webhostapp.com/?fbclid=IwAR1y9Sm-cwR3du6eMrr4wkD_R9G8GLpNKaAfh4vuLYuDvVmkKSvP0ytRnh0)
+- [Hostolt weboldal](https://szfmnagy23.000webhostapp.com/?fbclid=IwAR1y9Sm-cwR3du6eMrr4wkD_R9G8GLpNKaAfh4vuLYuDvVmkKSvP0ytRnh0)
 - [Trello](https://trello.com/b/DM3GPvPf/szfm23)
